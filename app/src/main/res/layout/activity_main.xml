@@ -785,8 +785,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:id="@+id/peg11"
-                android:src="@drawable/pegslot"
-                android:onClick="select" />
+                android:src="@drawable/pegslot" />
 
             <ImageView
                 android:layout_width="45dp"
@@ -794,8 +793,7 @@
                 android:id="@+id/peg12"
                 android:src="@drawable/pegslot"
                 android:layout_toRightOf="@+id/peg11"
-                android:layout_toEndOf="@+id/peg11"
-                android:onClick="select2"/>
+                android:layout_toEndOf="@+id/peg11" />
 
             <ImageView
                 android:layout_width="45dp"
