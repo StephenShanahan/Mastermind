@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -62,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
         //adds source image to blank imageview on click
         ImageView imgBus;
-        imgBus = (ImageView) findViewById(R.id.testimg2);
+        //imgBus = (ImageView) findViewById(R.id.testimg2);
+        imgBus = (ImageView) findViewById(R.id.pegimage22);
         imgBus.setImageResource(R.drawable.blue_peg2_nobg);
 
       /*  ImageView image = new ImageView(this);
@@ -82,10 +84,21 @@ public class MainActivity extends AppCompatActivity {
     {
 
         //adds source image to blank imageview on click
-        ImageView imgBus;
-        imgBus = (ImageView) findViewById(R.id.testimg1);
-        imgBus.setImageResource(R.drawable.red_peg_nobg);
-
+        ImageButton imgBus;
+        String buttonID;
+       // imgBus = (ImageView) findViewById(R.id.testimg1);
+        //imgBus = (ImageView) findViewById(R.id.pegimage21);
+        for( int x=0;x<2;x++) {
+            if(x == 0) {
+                 buttonID = "pegimage21";
+            }
+            else{
+                buttonID = "testimg1";
+            }
+            int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+            imgBus = ((ImageButton) findViewById(resID));
+            imgBus.setImageResource(R.drawable.red_peg_nobg);
+        }
       /*  ImageView image = new ImageView(this);
         image.setImageResource(R.drawable.blue_peg2);
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.gameRow1);
@@ -104,7 +117,8 @@ public class MainActivity extends AppCompatActivity {
 
         //adds source image to blank imageview on click
         ImageView imgBus;
-        imgBus = (ImageView) findViewById(R.id.testimg3);
+        //imgBus = (ImageView) findViewById(R.id.testimg3);
+        imgBus = (ImageView) findViewById(R.id.pegimage23);
         imgBus.setImageResource(R.drawable.green_peg2_nobg);
 
       /*  ImageView image = new ImageView(this);
@@ -125,7 +139,8 @@ public class MainActivity extends AppCompatActivity {
 
         //adds source image to blank imageview on click
         ImageView imgBus;
-        imgBus = (ImageView) findViewById(R.id.testimg4);
+        //imgBus = (ImageView) findViewById(R.id.testimg4);
+        imgBus = (ImageView) findViewById(R.id.pegimage24);
         imgBus.setImageResource(R.drawable.yellow_peg2_nobg);
 
       /*  ImageView image = new ImageView(this);

@@ -774,6 +774,43 @@
                 android:layout_alignTop="@+id/pin23"
                 android:layout_toRightOf="@+id/pin23"
                 android:layout_toEndOf="@+id/pin23" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pegimage21"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/peg22"
+                android:layout_toStartOf="@+id/peg22" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pegimage22"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/peg23"
+                android:layout_toStartOf="@+id/peg23" />
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pegimage23"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/peg24"
+                android:layout_toStartOf="@+id/peg24" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pegimage24"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/pin21"
+                android:layout_toStartOf="@+id/pin21" />
         </RelativeLayout>
 
         <RelativeLayout
