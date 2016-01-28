@@ -16,6 +16,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:onClick="select" />
+        --android:onClick="select"/>
         android:onClick="selectRed" />
 
     <ImageButton
@@ -27,7 +29,8 @@
         android:layout_above="@+id/redPeg"
         android:layout_alignLeft="@+id/redPeg"
         android:layout_alignStart="@+id/redPeg"
-        android:onClick="selectGreen" />
+        android:onClick="onClick1" />
+       !-- android:onClick="selectGreen" />
 
     <ImageButton
         android:layout_width="wrap_content"
