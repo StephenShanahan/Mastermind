@@ -16,7 +16,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="select" />
+        android:onClick="onClick" />
         --android:onClick="select"/>
         android:onClick="selectRed" />
 
@@ -890,7 +890,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/testimg2"
+                android:id="@+id/pegimage12"
                 android:background="@android:color/transparent"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg13"
@@ -899,7 +899,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/testimg1"
+                android:id="@+id/pegimage11"
                 android:background="@android:color/transparent"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg12"
@@ -908,7 +908,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/testimg3"
+                android:id="@+id/pegimage13"
                 android:background="@android:color/transparent"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg14"
@@ -917,7 +917,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/testimg4"
+                android:id="@+id/pegimage14"
                 android:background="@android:color/transparent"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin11"

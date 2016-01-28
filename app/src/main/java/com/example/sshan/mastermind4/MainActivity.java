@@ -14,26 +14,27 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 
-public class MainActivity extends AppCompatActivity{// implements OnClickListener {
+public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       /* ImageButton btn1 = (ImageButton) findViewById(R.id.redPeg);
-        btn1.setOnClickListener(this);
+        ImageButton redButton = (ImageButton) findViewById(R.id.redPeg);
+        redButton.setOnClickListener(this);
 
         ImageButton greenButton = (ImageButton) findViewById(R.id.greenPeg);
-        greenButton.setOnClickListener(this);*/
+        greenButton.setOnClickListener(this);
 
     }
 
-  /*  public void onClick(View v) {
+    public void onClick(View v) {
 
         Toast pieceToast=null;
-        ImageView imgBus;
+        ImageButton imgBus;
         String buttonID;
+        int resID;
         int x = 1;
         int y = 1;
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity{// implements OnClickListene
                         //pieceToast= Toast.makeText(getApplicationContext(), "Image Button One Clicked", Toast.LENGTH_SHORT);
                         //pieceToast.show();
                         buttonID = "pegimage" + String.valueOf(x) + String.valueOf(y);
-                        int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+                        resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                         imgBus = ((ImageButton) findViewById(resID));
                         imgBus.setImageResource(R.drawable.red_peg_nobg);
                         y++;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity{// implements OnClickListene
                         //pieceToast.show();
                         //adds source image to blank imageview on click
                         //imgBus = (ImageView) findViewById(R.id.testimg3);
-                        imgBus = (ImageView) findViewById(R.id.pegimage23);
+                        imgBus = (ImageButton) findViewById(R.id.pegimage23);
                         imgBus.setImageResource(R.drawable.green_peg2_nobg);
                         y++;
                         break;
@@ -69,15 +70,15 @@ public class MainActivity extends AppCompatActivity{// implements OnClickListene
             case R.id.imageButton4:
                 pieceToast= Toast.makeText(getApplicationContext(), "Image Button Four Clicked", Toast.LENGTH_SHORT);
                 pieceToast.show();
-                break;
+                break;*/
 
                     default:
                         break;
-             //   }
-         //   }
-        }
+               }
+            //}
+        //}
 
-    }*/
+    }
 
 
     @Override
