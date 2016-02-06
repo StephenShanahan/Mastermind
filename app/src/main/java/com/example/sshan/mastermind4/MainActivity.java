@@ -27,9 +27,23 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         ImageButton greenButton = (ImageButton) findViewById(R.id.greenPeg);
         greenButton.setOnClickListener(this);
 
+        ImageButton blueButton = (ImageButton) findViewById(R.id.bluePeg);
+        blueButton.setOnClickListener(this);
+
+        ImageButton yellowButton = (ImageButton) findViewById(R.id.yellowPeg);
+        yellowButton.setOnClickListener(this);
+
+        ImageButton codeButton = (ImageButton) findViewById(R.id.CodeButton);
+        codeButton.setOnClickListener(this);
+
+        ImageButton lineButton = (ImageButton) findViewById(R.id.LineButton);
+        lineButton.setOnClickListener(this);
+
     }
 
     public void onClick(View v) {
+
+        int[] code = Code.Generate();
 
         Toast pieceToast=null;
         ImageButton imgBus;
@@ -37,46 +51,110 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         int resID;
         int x = 1;
         int y = 1;
+        int z = 0;
 
-      //  for(int x = 1;x<11;x++) {
-        //    for (int y = 1; y < 5; y++) {
+        boolean b;
+
                 switch (v.getId()) {
 
                     case R.id.redPeg:
-                        //pieceToast= Toast.makeText(getApplicationContext(), "Image Button One Clicked", Toast.LENGTH_SHORT);
-                        //pieceToast.show();
-                        buttonID = "pegimage" + String.valueOf(x) + String.valueOf(y);
-                        resID = getResources().getIdentifier(buttonID, "id", getPackageName());
-                        imgBus = ((ImageButton) findViewById(resID));
-                        imgBus.setImageResource(R.drawable.red_peg_nobg);
-                        y++;
+
+                        b = Full();
+                        if(b == false) {
+                            z = pegPosition();
+                            buttonID = "pegimage" + String.valueOf(z);
+                            // buttonID = position();
+                            resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+                            imgBus = ((ImageButton) findViewById(resID));
+                            imgBus.setImageResource(R.drawable.red_peg_nobg); // to remove this image, imgBus.setImageDrawable(null)
+                            imgBus.setTag("full");
+                        }
+                        else {
+                            pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
+                            pieceToast.show();
+                        }
                         break;
 
                     case R.id.greenPeg:
-                        // pieceToast= Toast.makeText(getApplicationContext(), "Image Button Two Clicked", Toast.LENGTH_SHORT);
-                        //pieceToast.show();
-                        //adds source image to blank imageview on click
-                        //imgBus = (ImageView) findViewById(R.id.testimg3);
-                        imgBus = (ImageButton) findViewById(R.id.pegimage23);
+
+                        b = Full();
+                        if(b == false) {
+                        z =  pegPosition();
+                        buttonID = "pegimage" + String.valueOf(z);
+                        // buttonID = position();
+                        resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+                        imgBus = ((ImageButton) findViewById(resID));
                         imgBus.setImageResource(R.drawable.green_peg2_nobg);
-                        y++;
+                        imgBus.setTag("full");
+                        }
+                        else {
+                            pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
+                            pieceToast.show();
+                        }
+
                         break;
 
-         /*   case R.id.imageButton3:
-                pieceToast= Toast.makeText(getApplicationContext(), "Image Button Three Clicked", Toast.LENGTH_SHORT);
-                pieceToast.show();
-                break;
+                    case R.id.bluePeg:
 
-            case R.id.imageButton4:
-                pieceToast= Toast.makeText(getApplicationContext(), "Image Button Four Clicked", Toast.LENGTH_SHORT);
-                pieceToast.show();
-                break;*/
+                        b = Full();
+                        if(b == false) {
+                        z =  pegPosition();
+                        buttonID = "pegimage" + String.valueOf(z);
+                        // buttonID = position();
+                        resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+                        imgBus = ((ImageButton) findViewById(resID));
+                        imgBus.setImageResource(R.drawable.blue_peg2_nobg);
+                        imgBus.setTag("full");
+                        }
+                        else {
+                            pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
+                            pieceToast.show();
+                        }
 
-                    default:
+                    break;
+
+                     case R.id.yellowPeg:
+                         b = Full();
+                         if(b == false) {
+                         z =  pegPosition();
+                         buttonID = "pegimage" + String.valueOf(z);
+                         // buttonID = position();
+                         resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+                         imgBus = ((ImageButton) findViewById(resID));
+                         imgBus.setImageResource(R.drawable.yellow_peg2_nobg);
+                         imgBus.setTag("full");
+                         }
+                         else {
+                             pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
+                             pieceToast.show();
+                         }
+
+                    break;
+
+                    case R.id.CodeButton:
+
+                        String displayCode= "";
+                        for(int q=0;q<code.length;q++){
+                            displayCode += String.valueOf(code[q]);
+                        }
+
+                        pieceToast = Toast.makeText(getApplicationContext(), displayCode, Toast.LENGTH_SHORT);
+                        pieceToast.show();
+
+
                         break;
+
+                    case R.id.LineButton:
+
+
+
+                        break;
+
+                default:
+                    break;
                }
-            //}
-        //}
+           // }
+       // }
 
     }
 
@@ -139,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     }//one for loop for row and one inner for loop for position. judge click off id pressed have all buttons flow into smae onclikc select method.
 
-    public void selectBlue(View v)
+    public void selectBlue(View v) //put another method that handles the row and position movements and passes the id to the clcikable.
     {
 
         //adds source image to blank imageview on click
@@ -193,38 +271,130 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     }
 
-    public int guessRow()
+
+  /*  public String position()
     {
-        int x = 1;
+        String position = "pegimage";
 
-        while(x<11)
-        {
-           switch(x){
-               case 1:
+        return position + String.valueOf(guessRow()) + String.valueOf(guessPosition());
+        //a whole other class that uses the check if source on an array that has every source image or whatever. to check if they're full. if they're not if sends that back to position to
+        //return the correct value to the row managment
 
-                   break;
-               case 2:
-           }
+    }*/
+
+    public int pegPosition() {
+
+        //               0               4                   9                   14                  19                  24                  29                  34                     39
+        int[] pegList = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
 
 
-            x++;
+        String image;
+        int resID;
+        int x = 0;
+        int z = 0;
+        ImageButton testImg;
+
+        int testID;
+        String image2;
+        boolean b;
+
+            for (int i = 0; i < 40; i++) {
+                image2 = "pegimage" + String.valueOf(pegList[i]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg = ((ImageButton) findViewById(testID));
+                if (!testImg.getTag().toString().equalsIgnoreCase("full")) {
+                    x = i;
+                    i = i + 40;
+                    //testImg.setTag("full");
+                }
+
+            }
+
+           // image = "pegimage" + String.valueOf(pegList[z]);
+          //  resID = getResources().getIdentifier(image, "id", getPackageName());// "com.example.sshan.mastermind4");
+          //  ImageButton imgBus = ((ImageButton) findViewById(resID));
+          //  imgBus.setImageResource(R.drawable.yellow_peg2_nobg);
+
+          //  imgBus.setTag("full");
+
+           // boolean b = false;
+
+           // if (imgBus.getTag().toString().equalsIgnoreCase("full")) {
+           //     b = true;
+                //x++;
+          //  } else {
+          //      b = false;
+                //x++;
+          //  }
+
+
+        //Toast pieceToast;
+          //  pieceToast = Toast.makeText(getApplicationContext(), String.valueOf(x), Toast.LENGTH_SHORT);
+            //pieceToast.show();
+
+            z = (pegList[x]);
+            return z;
+
         }
 
-        return x;
-    }
-
-    public int guessPosition()
+    public boolean Full()
     {
-        int x = 1;
-        int y=0;
+        int[] pegList = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
 
-        while(x<5)
-        {
-          y = x;
 
+        ImageButton testImg1, testImg2, testImg3, testImg4;
+
+        int testID;
+        String image2;
+        boolean b = false;
+        //int a = 0;
+        for(int a = 0;a < 40; a = a + 4) {
+
+            image2 = "pegimage" + String.valueOf(pegList[a]);
+            testID = getResources().getIdentifier(image2, "id", getPackageName());
+            testImg1 = ((ImageButton) findViewById(testID));
+
+            image2 = "pegimage" + String.valueOf(pegList[a+1]);
+            testID = getResources().getIdentifier(image2, "id", getPackageName());
+            testImg2 = ((ImageButton) findViewById(testID));
+
+            image2 = "pegimage" + String.valueOf(pegList[a+2]);
+            testID = getResources().getIdentifier(image2, "id", getPackageName());
+            testImg3 = ((ImageButton) findViewById(testID));
+
+            image2 = "pegimage" + String.valueOf(pegList[a+3]);
+            testID = getResources().getIdentifier(image2, "id", getPackageName());
+            testImg4 = ((ImageButton) findViewById(testID));
+            if(testImg1.getTag().toString().equalsIgnoreCase("full") && testImg2.getTag().toString().equalsIgnoreCase("full") &&
+                    testImg3.getTag().toString().equalsIgnoreCase("full") && testImg4.getTag().toString().equalsIgnoreCase("full")) {
+                b = true;
+                a = 50;
+            }
+            else
+                b = false;
         }
 
-        x++;
-        return y;
+        return b;
     }
+
+    public int[] PegCodeGenerate(){
+
+        int[] peg = new int[4];
+
+
+
+        return peg;
+    }
+
+    public boolean PegRelease(){
+
+        boolean b = true;
+
+        //need to put a call in here that reads a finished code generated line and then we return true to Full to reduce the int a from 50 to the next 4 digits.
+
+        return b;
+    }
+
 }
+//set a int array code of 4 digits at the start. once a peg image is set, add a tag of the number (red for 1 etc.) and then on click of row accept, check code vs tags. or add tags to
+// then check against using sorting algorithms.
