@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="Logo_title">Mastermind for Android</string>
+    <string name="Play_buttontext">Play</string>
+    <string name="Option_buttontext">Options</string>
+    <string name="How_buttontext">How to Play</string>
+    <string name="title_activity_game">Game</string>
 </resources>

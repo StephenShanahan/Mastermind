@@ -10,6 +10,15 @@
     <ImageButton
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:id="@+id/PegCodeButton"
+        android:layout_above="@+id/LineButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="#00ff14" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/LineButton"
         android:layout_above="@+id/CodeButton"
         android:layout_alignParentRight="true"

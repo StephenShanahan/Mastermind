@@ -14,7 +14,11 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class MainActivity extends AppCompatActivity implements OnClickListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,21 +43,33 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         ImageButton lineButton = (ImageButton) findViewById(R.id.LineButton);
         lineButton.setOnClickListener(this);
 
+        ImageButton pegCodeButton = (ImageButton) findViewById(R.id.PegCodeButton);
+        pegCodeButton.setOnClickListener(this);
+
+        Peg.pegFalse();
+
     }
 
     public void onClick(View v) {
 
-        int[] code = Code.Generate();
+        int[] code = codeGenerator();
+       // int[] code1 = new int[4];
 
-        Toast pieceToast=null;
+       // for(int i =0;i<code.length;i++)
+      //     code1[i] = code[i];
+
+        Toast pieceToast;
         ImageButton imgBus;
         String buttonID;
         int resID;
         int x = 1;
         int y = 1;
         int z = 0;
+        //int[] pegCode = new int[4];
+        //ArrayList<Integer> pegCode= new ArrayList<>();
 
         boolean b;
+        boolean win;
 
                 switch (v.getId()) {
 
@@ -67,7 +83,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                             resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                             imgBus = ((ImageButton) findViewById(resID));
                             imgBus.setImageResource(R.drawable.red_peg_nobg); // to remove this image, imgBus.setImageDrawable(null)
-                            imgBus.setTag("full");
+                            imgBus.setTag("1");
+                            Check.setPegCode(1);
+                                //pegCode[0] = Integer.getInteger(imgBus.getTag().toString());
                         }
                         else {
                             pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
@@ -85,7 +103,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                         resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                         imgBus = ((ImageButton) findViewById(resID));
                         imgBus.setImageResource(R.drawable.green_peg2_nobg);
-                        imgBus.setTag("full");
+                        imgBus.setTag("2");
+                        Check.setPegCode(2);
                         }
                         else {
                             pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
@@ -104,7 +123,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                         resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                         imgBus = ((ImageButton) findViewById(resID));
                         imgBus.setImageResource(R.drawable.blue_peg2_nobg);
-                        imgBus.setTag("full");
+                        imgBus.setTag("3");
+                        Check.setPegCode(3);
                         }
                         else {
                             pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
@@ -122,7 +142,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                          resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                          imgBus = ((ImageButton) findViewById(resID));
                          imgBus.setImageResource(R.drawable.yellow_peg2_nobg);
-                         imgBus.setTag("full");
+                         imgBus.setTag("4");
+                         Check.setPegCode(4);
                          }
                          else {
                              pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
@@ -146,9 +167,33 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
                     case R.id.LineButton:
 
+                        Peg.pegRelease();
+                        //Peg.pegFalse();
+                       // pegCode = PegCodeGenerate();
+                        win = Check.CheckGame(code);
+                        if(win == true)
+                        {
+                            pieceToast = Toast.makeText(getApplicationContext(), "Congrats, you win!", Toast.LENGTH_SHORT);
+                            pieceToast.show();
+                        }
+                        else {
+                            pieceToast = Toast.makeText(getApplicationContext(), "Sorry, you lose!", Toast.LENGTH_SHORT);
+                            pieceToast.show();
+                        }
 
 
                         break;
+
+                    case R.id.PegCodeButton:
+
+                        int[] test = Check.getPegCode();
+                        String displayPegCode= "";
+                        for(int q=0;q<test.length;q++){
+                            displayPegCode += String.valueOf(test[q]);
+                        }
+                        pieceToast = Toast.makeText(getApplicationContext(), displayPegCode, Toast.LENGTH_SHORT);
+                        pieceToast.show();
+
 
                 default:
                     break;
@@ -215,72 +260,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             imgBug.setImageResource(R.drawable.red_peg_nobg);
         }
 
-    }//one for loop for row and one inner for loop for position. judge click off id pressed have all buttons flow into smae onclikc select method.
-
-    public void selectBlue(View v) //put another method that handles the row and position movements and passes the id to the clcikable.
-    {
-
-        //adds source image to blank imageview on click
-        ImageView imgBus;
-        //imgBus = (ImageView) findViewById(R.id.testimg2);
-        imgBus = (ImageView) findViewById(R.id.pegimage22);
-        imgBus.setImageResource(R.drawable.blue_peg2_nobg);
     }
-
-    public void selectRed(View v)
-    {
-
-        //adds source image to blank imageview on click
-        ImageButton imgBus;
-        String buttonID;
-       // imgBus = (ImageView) findViewById(R.id.testimg1);
-        //imgBus = (ImageView) findViewById(R.id.pegimage21);
-        for( int x=0;x<2;x++) {
-            if(x == 0) {
-                 buttonID = "pegimage" + "21";
-            }
-            else{
-                buttonID = "testimg1";
-            }
-            int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            imgBus = ((ImageButton) findViewById(resID));
-            imgBus.setImageResource(R.drawable.red_peg_nobg);
-        }
-
-    }// add a for loop y that relates to row position. have an undo method that removes the position from an array so it can go back into for loop?
-
-    public void selectGreen(View v)
-    {
-
-        //adds source image to blank imageview on click
-        ImageView imgBus;
-        //imgBus = (ImageView) findViewById(R.id.testimg3);
-        imgBus = (ImageView) findViewById(R.id.pegimage23);
-        imgBus.setImageResource(R.drawable.green_peg2_nobg);
-
-    }
-
-    public void selectYellow(View v)
-    {
-
-        //adds source image to blank imageview on click
-        ImageView imgBus;
-        //imgBus = (ImageView) findViewById(R.id.testimg4);
-        imgBus = (ImageView) findViewById(R.id.pegimage24);
-        imgBus.setImageResource(R.drawable.yellow_peg2_nobg);
-
-    }
-
-
-  /*  public String position()
-    {
-        String position = "pegimage";
-
-        return position + String.valueOf(guessRow()) + String.valueOf(guessPosition());
-        //a whole other class that uses the check if source on an array that has every source image or whatever. to check if they're full. if they're not if sends that back to position to
-        //return the correct value to the row managment
-
-    }*/
 
     public int pegPosition() {
 
@@ -302,7 +282,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 image2 = "pegimage" + String.valueOf(pegList[i]);
                 testID = getResources().getIdentifier(image2, "id", getPackageName());
                 testImg = ((ImageButton) findViewById(testID));
-                if (!testImg.getTag().toString().equalsIgnoreCase("full")) {
+                if (!testImg.getTag().toString().matches("\\d")) {    //if (!testImg.getTag().toString().equalsIgnoreCase("%d"))
                     x = i;
                     i = i + 40;
                     //testImg.setTag("full");
@@ -347,8 +327,25 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         int testID;
         String image2;
         boolean b = false;
-        //int a = 0;
-        for(int a = 0;a < 40; a = a + 4) {
+        Toast pieceToast;
+        boolean release = Peg.isPegReleased();
+       // Peg.pegFalse();
+        int c = 0;
+       // int temp;
+        if(release == true) {///everytime this method is called c = 0 and then 4 gets added. it will always start at 4 from the 2nd time on
+         //   c = c + 4;
+           // temp = count(c);
+          //  c = temp + 4;
+           // Peg.setCount();
+            //c = Peg.getCount();
+            c = Check.getCountCode().size();
+
+        }
+      /*  else{
+            pieceToast = Toast.makeText(getApplicationContext(), "Not released", Toast.LENGTH_SHORT);
+            pieceToast.show();
+        }*/
+        for(int a = c ;a < 40; a = a + 4) {
 
             image2 = "pegimage" + String.valueOf(pegList[a]);
             testID = getResources().getIdentifier(image2, "id", getPackageName());
@@ -365,8 +362,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             image2 = "pegimage" + String.valueOf(pegList[a+3]);
             testID = getResources().getIdentifier(image2, "id", getPackageName());
             testImg4 = ((ImageButton) findViewById(testID));
-            if(testImg1.getTag().toString().equalsIgnoreCase("full") && testImg2.getTag().toString().equalsIgnoreCase("full") &&
-                    testImg3.getTag().toString().equalsIgnoreCase("full") && testImg4.getTag().toString().equalsIgnoreCase("full")) {
+            if(testImg1.getTag().toString().matches("\\d") && testImg2.getTag().toString().matches("\\d") &&//"full"
+                    testImg3.getTag().toString().matches("\\d") && testImg4.getTag().toString().matches("\\d")) {
                 b = true;
                 a = 50;
             }
@@ -377,22 +374,24 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         return b;
     }
 
-    public int[] PegCodeGenerate(){
 
-        int[] peg = new int[4];
+    int temp = 0;
 
+    public int count(int c){
 
+        temp += c;
 
-        return peg;
+        return temp;
     }
 
-    public boolean PegRelease(){
 
-        boolean b = true;
+    int[] code = Code.Generate();
 
-        //need to put a call in here that reads a finished code generated line and then we return true to Full to reduce the int a from 50 to the next 4 digits.
+    public int[] codeGenerator(){
 
-        return b;
+        //int[] code = Code.Generate();
+
+        return code;
     }
 
 }

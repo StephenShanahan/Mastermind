@@ -9,7 +9,18 @@ import android.widget.Toast;
 
 public class Peg extends MainActivity{
 
-    public static boolean pegPosition(View v) {
+
+    static boolean b;
+    static int x = 0;
+    static int y;
+
+    public static void pegFalse(){
+        if(b == true)
+            b = false;
+    }
+
+
+   /* public static boolean pegPosition(View v) {
 
                        //1               5                   10                  15
         int[] pegList = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
@@ -39,5 +50,30 @@ public class Peg extends MainActivity{
           b = false;
 
         return b;
+    }*/
+
+    public static void pegRelease(){
+
+        b = true;
+
+    }
+
+    public static boolean isPegReleased(){
+            return b;
+
+    }
+
+    public static void setLineNumber(){
+        x = x+4;
+    }
+
+    public static void setCount()
+    {
+        y  = x + 4;
+    }
+
+    public static int getCount(){
+
+        return y;
     }
 }
