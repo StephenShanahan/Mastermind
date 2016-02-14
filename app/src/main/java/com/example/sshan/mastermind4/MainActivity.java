@@ -1,5 +1,6 @@
 package com.example.sshan.mastermind4;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         Peg.pegFalse();
 
     }
+
+
 
     public void onClick(View v) {
 
@@ -103,8 +106,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                         resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                         imgBus = ((ImageButton) findViewById(resID));
                         imgBus.setImageResource(R.drawable.green_peg2_nobg);
-                        imgBus.setTag("2");
-                        Check.setPegCode(2);
+                        imgBus.setTag("3");
+                        Check.setPegCode(3);
                         }
                         else {
                             pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
@@ -123,8 +126,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                         resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                         imgBus = ((ImageButton) findViewById(resID));
                         imgBus.setImageResource(R.drawable.blue_peg2_nobg);
-                        imgBus.setTag("3");
-                        Check.setPegCode(3);
+                        imgBus.setTag("2");
+                        Check.setPegCode(2);
                         }
                         else {
                             pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);

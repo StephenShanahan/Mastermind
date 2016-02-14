@@ -269,6 +269,66 @@
                 android:layout_toLeftOf="@+id/pin101"
                 android:layout_toStartOf="@+id/pin101"
                 android:tag="empty"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage101"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage104"
+                android:layout_alignRight="@+id/pin102"
+                android:layout_alignEnd="@+id/pin102"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage103"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage101"
+                android:layout_alignLeft="@+id/pinImage101"
+                android:layout_alignStart="@+id/pinImage101" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage101"
+                android:layout_toRightOf="@+id/pegimage104"
+                android:layout_toEndOf="@+id/pegimage104">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage102"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage101"
+                android:layout_toRightOf="@+id/peg104"
+                android:layout_toEndOf="@+id/peg104">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage104"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -382,6 +442,66 @@
                 android:layout_toLeftOf="@+id/pin91"
                 android:layout_toStartOf="@+id/pin91"
                 android:tag="empty"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage91"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage94"
+                android:layout_alignRight="@+id/pin92"
+                android:layout_alignEnd="@+id/pin92"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage93"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage91"
+                android:layout_alignLeft="@+id/pinImage91"
+                android:layout_alignStart="@+id/pinImage91" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage91"
+                android:layout_toRightOf="@+id/pegimage94"
+                android:layout_toEndOf="@+id/pegimage94">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage92"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage91"
+                android:layout_toRightOf="@+id/peg94"
+                android:layout_toEndOf="@+id/peg94">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage94"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -495,6 +615,66 @@
                 android:layout_toLeftOf="@+id/pin81"
                 android:layout_toStartOf="@+id/pin81"
                 android:tag="empty"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage81"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage84"
+                android:layout_alignRight="@+id/pin82"
+                android:layout_alignEnd="@+id/pin82"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage83"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage81"
+                android:layout_alignLeft="@+id/pinImage81"
+                android:layout_alignStart="@+id/pinImage81" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage81"
+                android:layout_toRightOf="@+id/pegimage84"
+                android:layout_toEndOf="@+id/pegimage84">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage82"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage81"
+                android:layout_toRightOf="@+id/peg84"
+                android:layout_toEndOf="@+id/peg84">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage84"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -608,6 +788,66 @@
                 android:layout_toLeftOf="@+id/pin71"
                 android:layout_toStartOf="@+id/pin71"
                 android:tag="empty"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage71"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage74"
+                android:layout_alignRight="@+id/pin72"
+                android:layout_alignEnd="@+id/pin72"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage73"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage71"
+                android:layout_alignLeft="@+id/pinImage71"
+                android:layout_alignStart="@+id/pinImage71" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage71"
+                android:layout_toRightOf="@+id/pegimage74"
+                android:layout_toEndOf="@+id/pegimage74">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage72"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage71"
+                android:layout_toRightOf="@+id/peg74"
+                android:layout_toEndOf="@+id/peg74">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage74"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -721,6 +961,66 @@
                 android:layout_toLeftOf="@+id/pin61"
                 android:layout_toStartOf="@+id/pin61"
                 android:tag="empty"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage61"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage64"
+                android:layout_alignRight="@+id/pin62"
+                android:layout_alignEnd="@+id/pin62"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage63"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage61"
+                android:layout_alignLeft="@+id/pinImage61"
+                android:layout_alignStart="@+id/pinImage61" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage61"
+                android:layout_toRightOf="@+id/pegimage64"
+                android:layout_toEndOf="@+id/pegimage64">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage62"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage61"
+                android:layout_toRightOf="@+id/peg64"
+                android:layout_toEndOf="@+id/peg64">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage64"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -834,6 +1134,66 @@
                 android:layout_toLeftOf="@+id/pin51"
                 android:layout_toStartOf="@+id/pin51"
                 android:tag="empty"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage51"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage54"
+                android:layout_alignRight="@+id/pin52"
+                android:layout_alignEnd="@+id/pin52"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage53"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage51"
+                android:layout_alignLeft="@+id/pinImage51"
+                android:layout_alignStart="@+id/pinImage51" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage51"
+                android:layout_toRightOf="@+id/pegimage54"
+                android:layout_toEndOf="@+id/pegimage54">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage52"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage51"
+                android:layout_toRightOf="@+id/peg54"
+                android:layout_toEndOf="@+id/peg54">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage54"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -948,6 +1308,65 @@
                 android:layout_toStartOf="@+id/pin41"
                 android:tag="empty"/>
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage41"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage44"
+                android:layout_alignRight="@+id/pin42"
+                android:layout_alignEnd="@+id/pin42"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage43"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage41"
+                android:layout_alignLeft="@+id/pinImage41"
+                android:layout_alignStart="@+id/pinImage41" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage41"
+                android:layout_toRightOf="@+id/pegimage44"
+                android:layout_toEndOf="@+id/pegimage44">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage42"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage41"
+                android:layout_toRightOf="@+id/peg44"
+                android:layout_toEndOf="@+id/peg44">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage44"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -1061,6 +1480,66 @@
                 android:layout_toLeftOf="@+id/pin31"
                 android:layout_toStartOf="@+id/pin31"
                 android:tag="empty"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage31"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage34"
+                android:layout_alignRight="@+id/pin32"
+                android:layout_alignEnd="@+id/pin32"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage33"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage31"
+                android:layout_alignLeft="@+id/pinImage31"
+                android:layout_alignStart="@+id/pinImage31" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage31"
+                android:layout_toRightOf="@+id/pegimage34"
+                android:layout_toEndOf="@+id/pegimage34">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage32"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage31"
+                android:layout_toRightOf="@+id/peg34"
+                android:layout_toEndOf="@+id/peg34">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage34"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -1174,6 +1653,66 @@
                 android:layout_toLeftOf="@+id/pin21"
                 android:layout_toStartOf="@+id/pin21"
                 android:tag="empty"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage21"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage24"
+                android:layout_alignRight="@+id/pin22"
+                android:layout_alignEnd="@+id/pin22"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage23"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage21"
+                android:layout_alignLeft="@+id/pinImage21"
+                android:layout_alignStart="@+id/pinImage21" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage21"
+                android:layout_toRightOf="@+id/pegimage24"
+                android:layout_toEndOf="@+id/pegimage24">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage22"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage21"
+                android:layout_toRightOf="@+id/peg24"
+                android:layout_toEndOf="@+id/peg24">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage24"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -1286,6 +1825,65 @@
                 android:layout_toLeftOf="@+id/pin11"
                 android:layout_toStartOf="@+id/pin11"
                 android:tag="empty"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage11"
+                android:src="@drawable/smallwhite"
+                android:layout_above="@+id/pegimage14"
+                android:layout_alignRight="@+id/pin12"
+                android:layout_alignEnd="@+id/pin12"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pinImage13"
+                android:src="@drawable/smallwhite"
+                android:layout_below="@+id/pinImage11"
+                android:layout_alignLeft="@+id/pinImage11"
+                android:layout_alignStart="@+id/pinImage11" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/pinImage11"
+                android:layout_toRightOf="@+id/pegimage14"
+                android:layout_toEndOf="@+id/pegimage14">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage12"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/pinImage11"
+                android:layout_toRightOf="@+id/peg14"
+                android:layout_toEndOf="@+id/peg14">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pinImage14"
+                    android:src="@drawable/smallwhite"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
+            </RelativeLayout>
 
         </RelativeLayout>
     </LinearLayout>
