@@ -20,7 +20,6 @@ import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,10 +47,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         pegCodeButton.setOnClickListener(this);
 
         Peg.pegFalse();
+        //Check.clearPegCode();
+        //Check.clearCountcode();
 
     }
-
-
 
     public void onClick(View v) {
 
@@ -68,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         int x = 1;
         int y = 1;
         int z = 0;
+        int[] pins;
         //int[] pegCode = new int[4];
         //ArrayList<Integer> pegCode= new ArrayList<>();
 
@@ -173,14 +173,27 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                         Peg.pegRelease();
                         //Peg.pegFalse();
                        // pegCode = PegCodeGenerate();
+                        //pins = Check.CheckPin(code);  pin problem
+                        //drawPin(pins);                pin problem
+                        //pins = Check.ReturnPins();
                         win = Check.CheckGame(code);
+                        pins = Check.ReturnPins();
                         if(win == true)
                         {
                             pieceToast = Toast.makeText(getApplicationContext(), "Congrats, you win!", Toast.LENGTH_SHORT);
                             pieceToast.show();
+                            Close();
                         }
                         else {
                             pieceToast = Toast.makeText(getApplicationContext(), "Sorry, you lose!", Toast.LENGTH_SHORT);
+                            pieceToast.show();
+                           // Check.clearPegCode();
+                           // pins = Check.CheckPin(code);
+                            String displayPegCode= "";
+                            for(int q=0;q<pins.length;q++){
+                                displayPegCode += String.valueOf(pins[q]);
+                            }
+                            pieceToast = Toast.makeText(getApplicationContext(), displayPegCode, Toast.LENGTH_SHORT);
                             pieceToast.show();
                         }
 
@@ -195,8 +208,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                             displayPegCode += String.valueOf(test[q]);
                         }
                         pieceToast = Toast.makeText(getApplicationContext(), displayPegCode, Toast.LENGTH_SHORT);
-                        pieceToast.show();
-
+                        pieceToast.show()
+;
 
                 default:
                     break;
@@ -227,42 +240,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-  /*  public void select(View v)
-    {
-
-        ImageView iv = new ImageView(this);
-        iv.setImageResource(R.drawable.red_peg2);
-        RelativeLayout rl = (RelativeLayout) findViewById(R.id.gameRow1);
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-            RelativeLayout.LayoutParams.WRAP_CONTENT,
-             RelativeLayout.LayoutParams.WRAP_CONTENT);
-        lp.addRule(RelativeLayout.BELOW, R.id.gameRow1);
-        //lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        lp.addRule(RelativeLayout.ALIGN_LEFT);
-        rl.addView(iv, lp);
-
-    }*/
-
-    public void select(View v)
-    {
-        ImageButton imgBug;
-        String buttonID;
-        int z = 21;
-        //String jumble = String.valueOf(z);
-
-        for(int x=0;x<2;x++) {
-            if (x == 0) {
-                buttonID = "pegimage" + String.valueOf(z);//"21"
-            } else {
-                buttonID = "testimg1";
-            }
-            int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            imgBug = ((ImageButton) findViewById(resID));
-            imgBug.setImageResource(R.drawable.red_peg_nobg);
-        }
-
     }
 
     public int pegPosition() {
@@ -395,6 +372,107 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         //int[] code = Code.Generate();
 
         return code;
+    }
+
+    /*public void drawPin(int[] pins){
+
+        int[] pinsNeeded= pins;
+
+        int[] pinList = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
+
+
+        int black = pins[0];
+        int white = pins[1];
+
+        ImageView testImg1, testImg2, testImg3, testImg4;
+
+        int testID;
+        String image2;
+        boolean release = Peg.isPegReleased();
+        int c = 0;
+        // int temp;
+        if(release == true) {
+            c = Check.getCountCode().size();
+
+        }
+
+        for(int a = c ;a < 40; a = a + 4) {
+            while(black > 0) {
+
+                image2 = "pinImage" + String.valueOf(pinList[0]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg1 =  ((ImageView) findViewById(testID));
+                if(testImg1.getDrawable() == null) {
+                    testImg1.setImageResource(R.drawable.blackpin);
+                    black--;
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[1]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg2 = ((ImageView) findViewById(testID));
+                if(testImg2.getDrawable() == null) {
+                    testImg2.setImageResource(R.drawable.blackpin);
+                    black--;
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[2]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg3 = ((ImageView) findViewById(testID));
+                if(testImg3.getDrawable() == null) {
+                    testImg3.setImageResource(R.drawable.blackpin);
+                    black--;
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[3]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg4 = ((ImageView) findViewById(testID));
+                if(testImg4.getDrawable() == null) {
+                    testImg4.setImageResource(R.drawable.blackpin);
+                    black--;
+                }
+            }
+            while(white>0){
+
+                image2 = "pinImage" + String.valueOf(pinList[0]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg1 = ((ImageView) findViewById(testID));
+                if(testImg1.getDrawable() == null) {
+                    testImg1.setImageResource(R.drawable.whitepin);
+                    white--;
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[1]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg2 = ((ImageView) findViewById(testID));
+                if(testImg2.getDrawable() == null) {
+                    testImg2.setImageResource(R.drawable.whitepin);
+                    white--;
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[2]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg3 = ((ImageView) findViewById(testID));
+                if(testImg3.getDrawable() == null) {
+                    testImg3.setImageResource(R.drawable.whitepin);
+                    white--;
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[3]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg4 = ((ImageView) findViewById(testID));
+                if(testImg4.getDrawable() == null) {
+                    testImg4.setImageResource(R.drawable.whitepin);
+                    white--;
+                }
+            }
+        }
+    }*/
+
+    public void Close(){
+
+        Check.clearPegCode();
+        finish();
+
     }
 
 }

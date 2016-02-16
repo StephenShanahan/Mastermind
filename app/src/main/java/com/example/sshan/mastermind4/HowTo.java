@@ -1,6 +1,5 @@
 package com.example.sshan.mastermind4;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,33 +7,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class Menu extends AppCompatActivity{
-    @Override
+/**
+ * Created by sshan on 12/02/2016.
+ */
+public class HowTo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu);
+        setContentView(R.layout.how_to);
 
-        Button button_Play = (Button) findViewById(R.id.button_Play);
-        button_Play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
-                startActivityForResult(intent, 0);
-                Check.clearPegCode();
-                Check.clearCountcode();
-            }
-        });
-
-        Button button_HowTo = (Button) findViewById(R.id.button_How);
-        button_HowTo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(v.getContext(), HowTo.class);
-                startActivityForResult(intent, 0);
-            }
-        });
     }
 
     @Override

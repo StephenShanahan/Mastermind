@@ -12,6 +12,18 @@ public class Check {
 
     static ArrayList<Integer> pegCode = new ArrayList<>();
     static ArrayList<Integer> countCode = new ArrayList<>();
+    static int[] pins = new int[2];
+
+
+    /*public static int[] CheckPin(int [] c){
+
+        int[] peg = getPegCode();
+        int[] code = c;
+
+        int[] pins  = Pin.showPin(code, peg);
+
+        return pins;
+    }*/
 
     public static boolean CheckGame(int code[]) {
          boolean win = false;
@@ -67,8 +79,9 @@ public class Check {
             else
                 win = false;
 
-        clearPegCode();//this solution no longer works - if the pegcode is incorrect the first go around the clear is never called. It just returns false straight away. win won't work either,
-        return win;   // may need to just use a hardcoded array to check 4 posiitons or a 4 way true statement.(solved, placed a 4 way true statement, can increase for more than 4.
+        pins  = Pin.showPin(code, peg);
+        clearPegCode();
+        return win;
     }
 
     public static void setPegCode(int x) {
@@ -89,11 +102,6 @@ public class Check {
         for (int i = 0; i < pegCode.size(); i++) {
             countCode.add(pegCode.get(i));
         }
-     /*   Iterator<Integer> iterator = pegCode.iterator();
-        for (int i = 0; i < ret.length; i++)
-        {
-            ret[i] = iterator.next().intValue();
-        }*/
 
         for (int i = 0; i < pegCode.size(); i++) {
             ret[i] = pegCode.get(i);
@@ -105,6 +113,20 @@ public class Check {
     public static ArrayList<Integer> getCountCode(){
 
         return countCode;
+    }
+
+    public static void clearCountcode(){
+        countCode.clear();
+    }
+
+    public static int[] ReturnPins(){
+
+        if(pins == null)
+        {
+            pins[0] = 9;
+            pins[1] = 9;
+        }
+        return pins;
     }
 
 }
