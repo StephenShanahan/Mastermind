@@ -3,6 +3,8 @@ package com.example.sshan.mastermind4;
 
 public class Code {
 
+    static int[] codePins;
+
     public static int[] Generate() {
 
         // 1 red 2 blue 3 green 4 yellow
@@ -18,6 +20,14 @@ public class Code {
                 }
             }
         }
+
+        codePins = code;
+
         return code;
+    }
+
+    public static int[] getCodePins(){
+
+        return codePins;
     }
 }

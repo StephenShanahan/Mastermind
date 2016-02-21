@@ -15,7 +15,7 @@ public class Check {
     static int[] pins = new int[2];
 
 
-    /*public static int[] CheckPin(int [] c){
+ /*   public static int[] CheckPin(int [] c){
 
         int[] peg = getPegCode();
         int[] code = c;
@@ -79,7 +79,7 @@ public class Check {
             else
                 win = false;
 
-        pins  = Pin.showPin(code, peg);
+        pins  = Pin.showPin(peg);
         clearPegCode();
         return win;
     }

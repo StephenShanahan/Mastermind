@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Pin {
 
-    public static int[] showPin(int[] c, int[] p) {
+    public static int[] showPin(int[] p) {
 
-        int[] code = c;
+        int[] code = Code.getCodePins();
         int[] pegCode = p;
         int black = 0;
         int white = 0;
