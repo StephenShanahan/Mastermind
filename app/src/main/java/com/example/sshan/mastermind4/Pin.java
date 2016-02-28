@@ -13,9 +13,12 @@ public class Pin {
         int temp = 10;
         int whiteCheck;
         int[] pins = new int[2];
+        boolean[] codeUsed = new boolean[code.length];
+        boolean[] guessUsed = new boolean[pegCode.length];
+
         //ArrayList<Integer> pins = new ArrayList<>();
 
-        for(int x=0;x<code.length;x++)
+       /* for(int x=0;x<code.length;x++)
         {
             for(int y=0;y<pegCode.length;y++)
             {
@@ -30,6 +33,24 @@ public class Pin {
                         white++;
                         temp = code[x];
                     }
+                }
+            }
+        }*/
+
+        for (int i = 0; i < code.length; i++) {
+            if (code[i] == pegCode[i]) {
+                black++;
+                codeUsed[i] = guessUsed[i] = true;
+            }
+        }
+
+        // Compare matching colors for "pins" that were not used
+        for (int i = 0; i < code.length; i++) {
+            for (int j = 0; j < pegCode.length; j++) {
+                if (codeUsed[i] == false && guessUsed[j] == false && code[i] == pegCode[j]) {
+                    white++;
+                    codeUsed[i] = guessUsed[j] = true;
+                    break;
                 }
             }
         }

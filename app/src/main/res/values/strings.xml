@@ -8,4 +8,5 @@
     <string name="Option_buttontext">Options</string>
     <string name="How_buttontext">How to Play</string>
     <string name="title_activity_game">Game</string>
+    <string name="dialog_text">Congratulations! You cracked the code! Would you like to play another game?</string>
 </resources>
