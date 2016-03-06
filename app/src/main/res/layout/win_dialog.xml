@@ -24,7 +24,7 @@
             android:layout_weight="0.50"
             android:background="#939393"
             android:text="Menu"
-            android:onClick="Close"/>
+            android:onClick="onClick"/>
 
         <Button
             android:id="@+id/dialog_play"
@@ -33,7 +33,7 @@
             android:layout_weight="0.50"
             android:background="#939393"
             android:text="Play again"
-            android:onClick="Close"/>
+            android:onClick="onClick"/>
     </LinearLayout>
 
 </RelativeLayout>

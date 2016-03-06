@@ -35,6 +35,16 @@ public class Menu extends AppCompatActivity{
                 startActivityForResult(intent, 0);
             }
         });
+
+        Button button_Options = (Button) findViewById(R.id.button_Options);
+        button_Options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(v.getContext(), Menu.class);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
 
     @Override

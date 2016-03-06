@@ -1,6 +1,9 @@
 package com.example.sshan.mastermind4;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -161,33 +164,31 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             case R.id.LineButton:
 
                 Peg.pegRelease();
-                //Peg.pegFalse();
-                // pegCode = PegCodeGenerate();
-                //pins = Check.CheckPin(code);  //pin problem
-                //drawPin(pins);                //pin problem
-                //pins = Check.ReturnPins();
                 win = Check.CheckGame(code);
                 pins = Check.ReturnPins();
                 drawPin(pins);
-                toastPins(pins);
+                //toastPins(pins);
                 if (win == true) {
-                    //pieceToast = Toast.makeText(getApplicationContext(), "Congrats, you win!", Toast.LENGTH_SHORT);
-                    //pieceToast.show();
-                    winDialog();
-                    //Close();
-                } else {
-                    pieceToast = Toast.makeText(getApplicationContext(), "Sorry, you lose!", Toast.LENGTH_SHORT);
-                    pieceToast.show();
-                    // Check.clearPegCode();
-                    // pins = Check.CheckPin(code);
-                          /*  String displayPegCode= "";
-                            for(int q=0;q<pins.length;q++){
-                                displayPegCode += String.valueOf(pins[q]);
-                            }
-                            pieceToast = Toast.makeText(getApplicationContext(), displayPegCode, Toast.LENGTH_SHORT);
-                            pieceToast.show();*/
-                }
 
+
+                    final View bubble = v;
+                    String message = getString(R.string.dialog_text);
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+                    alertDialog.setTitle("Congratulations! You win");
+                    alertDialog.setMessage(message);
+                    alertDialog.setPositiveButton("Play", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(bubble.getContext(), MainActivity.class);
+                            startActivityForResult(intent, 0);
+                        }
+                    });
+                    alertDialog.setNegativeButton("Menu", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    });
+                    alertDialog.show();
+                }
 
                 break;
 
@@ -199,14 +200,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     displayPegCode += String.valueOf(test[q]);
                 }
                 pieceToast = Toast.makeText(getApplicationContext(), displayPegCode, Toast.LENGTH_SHORT);
-                pieceToast.show()
-                ;
+                pieceToast.show();
+                break;
 
             default:
                 break;
         }
-        // }
-        // }
 
     }
 
@@ -253,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             image2 = "pegimage" + String.valueOf(pegList[i]);
             testID = getResources().getIdentifier(image2, "id", getPackageName());
             testImg = ((ImageButton) findViewById(testID));
-            if (!testImg.getTag().toString().matches("\\d")) {    //if (!testImg.getTag().toString().equalsIgnoreCase("%d"))
+            if (!testImg.getTag().toString().matches("\\d")) {
                 x = i;
                 i = i + 40;
                 //testImg.setTag("full");
@@ -281,13 +280,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         // Peg.pegFalse();
         int c = 0;
         // int temp;
-        if (release == true) {///everytime this method is called c = 0 and then 4 gets added. it will always start at 4 from the 2nd time on
+        if (release == true) {///every time this method is called c = 0 and then 4 gets added. it will always start at 4 from the 2nd time on
             //   c = c + 4;
             // temp = count(c);
             //  c = temp + 4;
             // Peg.setCount();
             //c = Peg.getCount();
             c = Check.getCountCode().size();
+            pieceToast = Toast.makeText(getApplicationContext(), "Number is:" + c, Toast.LENGTH_SHORT);
+            pieceToast.show();
 
         }
       /*  else{
@@ -311,7 +312,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             image2 = "pegimage" + String.valueOf(pegList[a + 3]);
             testID = getResources().getIdentifier(image2, "id", getPackageName());
             testImg4 = ((ImageButton) findViewById(testID));
-            if (testImg1.getTag().toString().matches("\\d") && testImg2.getTag().toString().matches("\\d") &&//"full"
+            if (testImg1.getTag().toString().matches("\\d") && testImg2.getTag().toString().matches("\\d") &&
                     testImg3.getTag().toString().matches("\\d") && testImg4.getTag().toString().matches("\\d")) {
                 b = true;
                 a = 50;
@@ -525,6 +526,52 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
     }
 
+    public void Undo(View v){
+        int image = v.getId();
+
+        String IdAsString = v.getResources().getResourceName(v.getId());
+
+        String image2;
+        int testID;
+        ImageButton testImg;
+        image2 = String.valueOf(image);
+        testID = getResources().getIdentifier(image2, "id", getPackageName());
+        testImg = ((ImageButton) findViewById(testID));
+
+        String tag = testImg.getTag().toString();
+
+        testImg.setTag("empty");
+        testImg.setImageResource(android.R.color.transparent);
+
+        String str= image2;
+
+        String token = "com.example.sshan.mastermind4:id/pegimage";
+        String IdAsString1 = IdAsString.replace(token, "");
+
+       // Toast pieceToast1;
+       // pieceToast1 = Toast.makeText(getApplicationContext(), IdAsString1, Toast.LENGTH_SHORT);
+       // pieceToast1.show();
+
+       /* String numberOnly = str.substring(8,9);
+
+        String digits = str.replaceAll("[^0-9.]","");
+
+        Toast pieceToast;
+        pieceToast = Toast.makeText(getApplicationContext(), numberOnly, Toast.LENGTH_SHORT);
+        pieceToast.show();*/
+
+        int x;
+
+        if(IdAsString1.matches("101") || IdAsString1.matches("102") || IdAsString1.matches("103") || IdAsString1.matches("104")){
+            x = Integer.parseInt(IdAsString1.substring(2));
+        }
+        else {
+            x = Integer.parseInt(IdAsString1.substring(1));
+        }
+
+        Check.removePegCode(x);
+
+    }
 
 
     public void toastPins(int[] p){
@@ -542,14 +589,5 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     }
 
-    public void winDialog() {
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.win_dialog);
-        dialog.setTitle("You Win!");
-        dialog.show();
-
-
-        // TODO: 28/02/2016 add onclicklistener to restart and whatnot. also work on undo and general error fixes revolving around pressing the line button with < 4 pegs clicked
-    }
 
 }

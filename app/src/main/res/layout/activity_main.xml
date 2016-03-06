@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/greenPeg"
         android:src="@drawable/green_peg2"
-        android:background="#939393"
+        android:background="#ffffff"
         android:layout_above="@+id/redPeg"
         android:layout_alignLeft="@+id/redPeg"
         android:layout_alignStart="@+id/redPeg"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/yellowPeg"
         android:src="@drawable/yellow_peg2"
-        android:background="#939393"
+        android:background="#ffffff"
         android:layout_above="@+id/greenPeg"
         android:layout_alignLeft="@+id/greenPeg"
         android:layout_alignStart="@+id/greenPeg"
@@ -163,7 +163,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg102"
                 android:layout_toStartOf="@+id/peg102"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -173,7 +174,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg103"
                 android:layout_toStartOf="@+id/peg103"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
 
             <ImageButton
@@ -184,7 +186,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg104"
                 android:layout_toStartOf="@+id/peg104"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -194,7 +197,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin101"
                 android:layout_toStartOf="@+id/pin101"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -213,7 +217,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:tag="empty"/>/>
+                    android:tag="empty"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -224,7 +228,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:tag="empty"/>/>
+                    android:tag="empty"/>
 
             </RelativeLayout>
 
@@ -245,7 +249,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="21dp"
                     android:layout_marginEnd="14dp"
-                    android:tag="empty"/>/>
+                    android:tag="empty"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -256,7 +260,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:tag="empty"/>/>
+                    android:tag="empty"/>
             </RelativeLayout>
 
         </RelativeLayout>
@@ -340,7 +344,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg92"
                 android:layout_toStartOf="@+id/peg92"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -350,7 +355,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg93"
                 android:layout_toStartOf="@+id/peg93"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
 
             <ImageButton
@@ -361,7 +367,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg94"
                 android:layout_toStartOf="@+id/peg94"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -371,7 +378,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin91"
                 android:layout_toStartOf="@+id/pin91"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -517,7 +525,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg82"
                 android:layout_toStartOf="@+id/peg82"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -527,7 +536,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg83"
                 android:layout_toStartOf="@+id/peg83"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
 
             <ImageButton
@@ -538,7 +548,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg84"
                 android:layout_toStartOf="@+id/peg84"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -548,7 +559,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin81"
                 android:layout_toStartOf="@+id/pin81"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -694,7 +706,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg72"
                 android:layout_toStartOf="@+id/peg72"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -704,7 +717,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg73"
                 android:layout_toStartOf="@+id/peg73"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
 
             <ImageButton
@@ -715,7 +729,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg74"
                 android:layout_toStartOf="@+id/peg74"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -725,7 +740,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin71"
                 android:layout_toStartOf="@+id/pin71"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -744,7 +760,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:tag="empty"/>/>
+                    android:tag="empty"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -755,7 +771,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:tag="empty"/>/>
+                    android:tag="empty"/>
 
             </RelativeLayout>
 
@@ -776,7 +792,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="21dp"
                     android:layout_marginEnd="14dp"
-                    android:tag="empty"/>/>
+                    android:tag="empty"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -787,7 +803,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:tag="empty"/>/>
+                    android:tag="empty" />
             </RelativeLayout>
 
         </RelativeLayout>
@@ -871,7 +887,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg62"
                 android:layout_toStartOf="@+id/peg62"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -881,7 +898,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg63"
                 android:layout_toStartOf="@+id/peg63"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
 
             <ImageButton
@@ -892,7 +910,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg64"
                 android:layout_toStartOf="@+id/peg64"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -902,7 +921,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin61"
                 android:layout_toStartOf="@+id/pin61"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1048,7 +1068,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg52"
                 android:layout_toStartOf="@+id/peg52"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1058,7 +1079,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg53"
                 android:layout_toStartOf="@+id/peg53"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
 
             <ImageButton
@@ -1069,7 +1091,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg54"
                 android:layout_toStartOf="@+id/peg54"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1079,7 +1102,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin51"
                 android:layout_toStartOf="@+id/pin51"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1225,7 +1249,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg42"
                 android:layout_toStartOf="@+id/peg42"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1235,7 +1260,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg43"
                 android:layout_toStartOf="@+id/peg43"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
 
             <ImageButton
@@ -1246,7 +1272,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg44"
                 android:layout_toStartOf="@+id/peg44"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1256,7 +1283,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin41"
                 android:layout_toStartOf="@+id/pin41"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1402,7 +1430,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg32"
                 android:layout_toStartOf="@+id/peg32"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1412,7 +1441,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg33"
                 android:layout_toStartOf="@+id/peg33"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
 
             <ImageButton
@@ -1423,7 +1453,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg34"
                 android:layout_toStartOf="@+id/peg34"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1433,7 +1464,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin31"
                 android:layout_toStartOf="@+id/pin31"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1579,7 +1611,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg22"
                 android:layout_toStartOf="@+id/peg22"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1589,7 +1622,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg23"
                 android:layout_toStartOf="@+id/peg23"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
 
             <ImageButton
@@ -1600,7 +1634,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg24"
                 android:layout_toStartOf="@+id/peg24"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1610,7 +1645,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin21"
                 android:layout_toStartOf="@+id/pin21"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1686,13 +1722,13 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:id="@+id/peg11"
-                android:src="@drawable/pegslot" />
+                android:src="@drawable/pegslot_woodtest" />
 
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:id="@+id/peg12"
-                android:src="@drawable/pegslot"
+                android:src="@drawable/pegslot_woodtest"
                 android:layout_toRightOf="@+id/peg11"
                 android:layout_toEndOf="@+id/peg11" />
 
@@ -1700,7 +1736,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:id="@+id/peg13"
-                android:src="@drawable/pegslot"
+                android:src="@drawable/pegslot_woodtest"
                 android:layout_toRightOf="@+id/peg12"
                 android:layout_toEndOf="@+id/peg12" />
 
@@ -1708,7 +1744,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:id="@+id/peg14"
-                android:src="@drawable/pegslot"
+                android:src="@drawable/pegslot_woodtest"
                 android:layout_toRightOf="@+id/peg13"
                 android:layout_toEndOf="@+id/peg13" />
 
@@ -1716,7 +1752,7 @@
                 android:layout_width="21.75dp"
                 android:layout_height="21.75dp"
                 android:id="@+id/pin11"
-                android:src="@drawable/pinslot"
+                android:src="@drawable/pinslot_wood"
                 android:layout_alignParentTop="true"
                 android:layout_toLeftOf="@+id/pin12"
                 android:layout_toStartOf="@+id/pin12" />
@@ -1725,7 +1761,7 @@
                 android:layout_width="21.75dp"
                 android:layout_height="21.75dp"
                 android:id="@+id/pin12"
-                android:src="@drawable/pinslot"
+                android:src="@drawable/pinslot_wood"
                 android:layout_alignParentTop="true"
                 android:layout_alignLeft="@+id/pin14"
                 android:layout_alignStart="@+id/pin14" />
@@ -1734,7 +1770,7 @@
                 android:layout_width="21.75dp"
                 android:layout_height="21.75dp"
                 android:id="@+id/pin13"
-                android:src="@drawable/pinslot"
+                android:src="@drawable/pinslot_wood"
                 android:layout_alignParentBottom="true"
                 android:layout_toRightOf="@+id/peg14"
                 android:layout_toEndOf="@+id/peg14" />
@@ -1743,7 +1779,7 @@
                 android:layout_width="21.75dp"
                 android:layout_height="21.75dp"
                 android:id="@+id/pin14"
-                android:src="@drawable/pinslot"
+                android:src="@drawable/pinslot_wood"
                 android:layout_alignTop="@+id/pin13"
                 android:layout_toRightOf="@+id/pin13"
                 android:layout_toEndOf="@+id/pin13" />
@@ -1756,7 +1792,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg13"
                 android:layout_toStartOf="@+id/peg13"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1766,7 +1803,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg12"
                 android:layout_toStartOf="@+id/peg12"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1776,7 +1814,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/peg14"
                 android:layout_toStartOf="@+id/peg14"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -1786,7 +1825,8 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/pin11"
                 android:layout_toStartOf="@+id/pin11"
-                android:tag="empty"/>
+                android:tag="empty"
+                android:onClick="Undo" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
