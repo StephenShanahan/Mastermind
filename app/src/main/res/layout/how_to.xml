@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<RelativeLayout
+    android:layout_width="match_parent" android:layout_height="wrap_content"
     android:background="#FFFFFF">
 
     <TextView
@@ -19,14 +24,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Mastermind is a classic puzzle game designed in the 1970&apos;s. The object of the game is to guess a hidden code based on colours. The computer will generate a code combination of upt to 4 colours. You must then try to break this code, by guessing different colour combinations."
+        android:text="@string/How_To"
         android:id="@+id/textView3"
         android:layout_marginTop="25dp"
-        android:textSize="19dp"
+        android:textSize="19sp"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="27dp"
         android:layout_marginStart="27dp"
         android:textColor="#000000"/>
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

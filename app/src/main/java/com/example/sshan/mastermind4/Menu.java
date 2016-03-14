@@ -3,6 +3,7 @@ package com.example.sshan.mastermind4;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,7 @@ public class Menu extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
+                //boolean b = Options.getDuplicates();
                 Intent intent = new Intent(v.getContext(), MainActivity.class);
                 startActivityForResult(intent, 0);
                 Check.clearPegCode();
@@ -41,8 +43,18 @@ public class Menu extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), Menu.class);
+                //Options.setDuplicates();
+                Intent intent = new Intent(v.getContext(), Preferences.class);
                 startActivityForResult(intent, 0);
+            }
+        });
+
+        Button button_Exit = (Button) findViewById(R.id.button_Exit);
+        button_Exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finish();
             }
         });
     }

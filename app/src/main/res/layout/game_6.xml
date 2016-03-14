@@ -1,0 +1,860 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="@drawable/wood_bgtest"
+    android:id="@+id/gameView">
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/PegCodeButton"
+        android:layout_above="@+id/LineButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="#00ff14" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/LineButton"
+        android:layout_above="@+id/CodeButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="#ff0065" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/CodeButton"
+        android:layout_above="@+id/bluePeg"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="#0a00ff" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/redPeg"
+        android:src="@drawable/red_peg2"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClick" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/greenPeg"
+        android:src="@drawable/green_peg2"
+        android:background="#ffffff"
+        android:layout_above="@+id/redPeg"
+        android:layout_alignLeft="@+id/redPeg"
+        android:layout_alignStart="@+id/redPeg"
+        android:onClick="onClick" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/yellowPeg"
+        android:src="@drawable/yellow_peg2"
+        android:background="#ffffff"
+        android:layout_above="@+id/greenPeg"
+        android:layout_alignLeft="@+id/greenPeg"
+        android:layout_alignStart="@+id/greenPeg"
+        android:onClick="onClick" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bluePeg"
+        android:src="@drawable/blue_peg2"
+        android:background="#ffffff"
+        android:layout_above="@+id/yellowPeg"
+        android:layout_alignLeft="@+id/yellowPeg"
+        android:layout_alignStart="@+id/yellowPeg"
+        android:onClick="onClick"/>
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="38.5dp" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg101"
+                android:src="@drawable/pegslot_wood_defined"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg102"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg101"
+                android:layout_toEndOf="@+id/peg101" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg103"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg102"
+                android:layout_toEndOf="@+id/peg102" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg104"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg103"
+                android:layout_toEndOf="@+id/peg103" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin101"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin102"
+                android:layout_toStartOf="@+id/pin102" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin102"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin104"
+                android:layout_alignStart="@+id/pin104" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin103"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg104"
+                android:layout_toEndOf="@+id/peg104" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin104"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin103"
+                android:layout_toRightOf="@+id/pin103"
+                android:layout_toEndOf="@+id/pin103" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="38.5dp" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg91"
+                android:src="@drawable/pegslot_wood_defined"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg92"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg91"
+                android:layout_toEndOf="@+id/peg91" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg93"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg92"
+                android:layout_toEndOf="@+id/peg92" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg94"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg93"
+                android:layout_toEndOf="@+id/peg93" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin91"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin92"
+                android:layout_toStartOf="@+id/pin92" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin92"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin94"
+                android:layout_alignStart="@+id/pin94" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin93"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg94"
+                android:layout_toEndOf="@+id/peg94" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin94"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin93"
+                android:layout_toRightOf="@+id/pin93"
+                android:layout_toEndOf="@+id/pin93" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="38.5dp" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg81"
+                android:src="@drawable/pegslot_wood_defined"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg82"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg81"
+                android:layout_toEndOf="@+id/peg81" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg83"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg82"
+                android:layout_toEndOf="@+id/peg82" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg84"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg83"
+                android:layout_toEndOf="@+id/peg83" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin81"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin82"
+                android:layout_toStartOf="@+id/pin82" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin82"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin84"
+                android:layout_alignStart="@+id/pin84" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin83"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg84"
+                android:layout_toEndOf="@+id/peg84" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin84"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin83"
+                android:layout_toRightOf="@+id/pin83"
+                android:layout_toEndOf="@+id/pin83" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="38.5dp" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg71"
+                android:src="@drawable/pegslot_wood_defined"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg72"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg71"
+                android:layout_toEndOf="@+id/peg71" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg73"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg72"
+                android:layout_toEndOf="@+id/peg72" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg74"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg73"
+                android:layout_toEndOf="@+id/peg73" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin71"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin72"
+                android:layout_toStartOf="@+id/pin72" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin72"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin74"
+                android:layout_alignStart="@+id/pin74" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin73"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg74"
+                android:layout_toEndOf="@+id/peg74" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin74"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin73"
+                android:layout_toRightOf="@+id/pin73"
+                android:layout_toEndOf="@+id/pin73" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="38.5dp" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg61"
+                android:src="@drawable/pegslot_wood_defined"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg62"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg61"
+                android:layout_toEndOf="@+id/peg61" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg63"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg62"
+                android:layout_toEndOf="@+id/peg62" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg64"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg63"
+                android:layout_toEndOf="@+id/peg63" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin61"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin62"
+                android:layout_toStartOf="@+id/pin62" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin62"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin64"
+                android:layout_alignStart="@+id/pin64" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin63"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg64"
+                android:layout_toEndOf="@+id/peg64" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin64"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin63"
+                android:layout_toRightOf="@+id/pin63"
+                android:layout_toEndOf="@+id/pin63" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="38.5dp" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg51"
+                android:src="@drawable/pegslot_wood_defined"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg52"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg51"
+                android:layout_toEndOf="@+id/peg51" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg53"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg52"
+                android:layout_toEndOf="@+id/peg52" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg54"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg53"
+                android:layout_toEndOf="@+id/peg53" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin51"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin52"
+                android:layout_toStartOf="@+id/pin52" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin52"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin54"
+                android:layout_alignStart="@+id/pin54" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin53"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg54"
+                android:layout_toEndOf="@+id/peg54" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin54"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin53"
+                android:layout_toRightOf="@+id/pin53"
+                android:layout_toEndOf="@+id/pin53" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="38.5dp" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg41"
+                android:src="@drawable/pegslot_wood_defined"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg42"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg41"
+                android:layout_toEndOf="@+id/peg41" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg43"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg42"
+                android:layout_toEndOf="@+id/peg42" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg44"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg43"
+                android:layout_toEndOf="@+id/peg43" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin41"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin42"
+                android:layout_toStartOf="@+id/pin42" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin42"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin44"
+                android:layout_alignStart="@+id/pin44" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin43"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg44"
+                android:layout_toEndOf="@+id/peg44" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin44"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin43"
+                android:layout_toRightOf="@+id/pin43"
+                android:layout_toEndOf="@+id/pin43" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="38.5dp" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg31"
+                android:src="@drawable/pegslot_wood_defined"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg32"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg31"
+                android:layout_toEndOf="@+id/peg31" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg33"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg32"
+                android:layout_toEndOf="@+id/peg32" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg34"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg33"
+                android:layout_toEndOf="@+id/peg33" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin31"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin32"
+                android:layout_toStartOf="@+id/pin32" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin32"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin34"
+                android:layout_alignStart="@+id/pin34" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin33"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg34"
+                android:layout_toEndOf="@+id/peg34" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin34"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin33"
+                android:layout_toRightOf="@+id/pin33"
+                android:layout_toEndOf="@+id/pin33" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="38.5dp" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg21"
+                android:src="@drawable/pegslot_wood_defined"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg22"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg21"
+                android:layout_toEndOf="@+id/peg21" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg23"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg22"
+                android:layout_toEndOf="@+id/peg22" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/peg24"
+                android:src="@drawable/pegslot_wood_defined"
+                android:layout_toRightOf="@+id/peg23"
+                android:layout_toEndOf="@+id/peg23" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin21"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin22"
+                android:layout_toStartOf="@+id/pin22" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin22"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin24"
+                android:layout_alignStart="@+id/pin24" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin23"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg24"
+                android:layout_toEndOf="@+id/peg24" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin24"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin23"
+                android:layout_toRightOf="@+id/pin23"
+                android:layout_toEndOf="@+id/pin23" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="38.5dp"
+            android:id="@+id/gameRow1">
+
+            <ImageView
+                android:layout_width="38.5dp"
+                android:layout_height="38.5dp"
+                android:id="@+id/peg11"
+                android:src="@drawable/pegslot_woodtest"
+                android:layout_alignParentBottom="true" />
+
+            <ImageView
+                android:layout_width="38.5dp"
+                android:layout_height="38.5dp"
+                android:id="@+id/peg12"
+                android:src="@drawable/pegslot_woodtest"
+                android:layout_toRightOf="@+id/peg11"
+                android:layout_toEndOf="@+id/peg11" />
+
+            <ImageView
+                android:layout_width="38.5dp"
+                android:layout_height="38.5dp"
+                android:id="@+id/peg13"
+                android:src="@drawable/pegslot_woodtest"
+                android:layout_toRightOf="@+id/peg12"
+                android:layout_toEndOf="@+id/peg12" />
+
+            <ImageView
+                android:layout_width="38.5dp"
+                android:layout_height="38.5dp"
+                android:id="@+id/peg14"
+                android:src="@drawable/pegslot_woodtest"
+                android:layout_toRightOf="@+id/peg13"
+                android:layout_toEndOf="@+id/peg13" />
+
+            <ImageView
+                android:layout_width="38.5dp"
+                android:layout_height="38.5dp"
+                android:id="@+id/peg15"
+                android:src="@drawable/pegslot_woodtest"
+                android:layout_toRightOf="@+id/peg14"
+                android:layout_toEndOf="@+id/peg14" />
+
+            <ImageView
+                android:layout_width="38.5dp"
+                android:layout_height="38.5dp"
+                android:id="@+id/peg16"
+                android:src="@drawable/pegslot_woodtest"
+                android:layout_toRightOf="@+id/peg15"
+                android:layout_toEndOf="@+id/peg15" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin11"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/pin12"
+                android:layout_toStartOf="@+id/pin12" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin12"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/pin14"
+                android:layout_alignStart="@+id/pin14" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin13"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/peg16"
+                android:layout_toEndOf="@+id/peg16" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin14"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin13"
+                android:layout_toRightOf="@+id/pin13"
+                android:layout_toEndOf="@+id/pin13" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin15"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin13"
+                android:layout_toRightOf="@+id/pin13"
+                android:layout_toEndOf="@+id/pin13" />
+
+            <ImageView
+                android:layout_width="21.75dp"
+                android:layout_height="21.75dp"
+                android:id="@+id/pin16"
+                android:src="@drawable/pinslot_wood"
+                android:layout_alignTop="@+id/pin13"
+                android:layout_toRightOf="@+id/pin13"
+                android:layout_toEndOf="@+id/pin13" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:src="@drawable/red_peg_nobg"
+                android:layout_alignParentTop="true"
+                android:layout_alignRight="@+id/peg11"
+                android:layout_alignEnd="@+id/peg11" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

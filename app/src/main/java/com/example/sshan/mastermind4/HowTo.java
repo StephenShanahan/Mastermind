@@ -7,9 +7,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-/**
- * Created by sshan on 12/02/2016.
- */
 public class HowTo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
