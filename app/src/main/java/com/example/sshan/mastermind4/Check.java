@@ -9,6 +9,7 @@ public class Check {
     static ArrayList<Integer> pegCode = new ArrayList<>();
     static ArrayList<Integer> countCode = new ArrayList<>();
     static int[] pins = new int[2];
+    static int codeLength;
 
 
     public static boolean CheckGame(int code[]) {
@@ -17,11 +18,21 @@ public class Check {
 
         int[] peg = getPegCode();
 
-        for(int i = 0; i < 1;i++)
-            if((peg[0] == code[0]) && (peg[1] == code[1]) && (peg[2] == code[2]) && (peg[3] == code[3]))
-                win = true;
-            else
-                win = false;
+        codeLength = getCodeLength();
+        if(codeLength == 4) {
+            for (int i = 0; i < 1; i++)
+                if ((peg[0] == code[0]) && (peg[1] == code[1]) && (peg[2] == code[2]) && (peg[3] == code[3]))
+                    win = true;
+                else
+                    win = false;
+        }
+        else if(codeLength == 6){
+            for (int i = 0; i < 1; i++)
+                if ((peg[0] == code[0]) && (peg[1] == code[1]) && (peg[2] == code[2]) && (peg[3] == code[3]) && (peg[4] == code[4]) && (peg[5] == code[5]))
+                    win = true;
+                else
+                    win = false;
+        }
 
         pins  = Pin.showPin(peg);
         clearPegCode();
@@ -38,7 +49,7 @@ public class Check {
         }
         else {
             for (int i = 0; i < pegCode.size(); i++) {
-                if (pegCode.get(i) == 5) {
+                if (pegCode.get(i) == 9) {
                     pegCode.set(i, x);
                     b = true;
                     break;
@@ -56,7 +67,7 @@ public class Check {
     public static void removePegCode(int x){
 
         x = x-1;
-        pegCode.set(x, 5);// keeps index position alive. can then implement like a next of code of some sort. replace null with number
+        pegCode.set(x, 9);// keeps index position alive. can then implement like a next of code of some sort. replace null with number
 
         //pegCode.clear();
 
@@ -98,6 +109,14 @@ public class Check {
             pins[1] = 9;
         }
         return pins;
+    }
+
+    public static void setCodeLength(int x){
+        codeLength = x;
+    }
+
+    public static int getCodeLength(){
+        return codeLength;
     }
 
 }

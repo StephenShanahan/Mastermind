@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        >--android:title="PreferenceCategory CheckBoxPreference">
+        <CheckBoxPreference
+            android:key="duplicates"
+            android:title="Duplicates"
+            android:summary="Check to allow duplicates" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        >--android:title="PreferenceCategory ListPreference">
+        <ListPreference
+            android:key="pegs"
+            android:title="Number of Pegs"
+            android:defaultValue="1"
+            android:entries="@array/listentries"
+            android:entryValues="@array/listvalues" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        >--android:title="PreferenceCategory ListPreference">
+        <ListPreference
+            android:key="colours"
+            android:title="Number of Colours"
+            android:defaultValue="4"
+            android:entries="@array/Colourentries"
+            android:entryValues="@array/Colourvalues" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

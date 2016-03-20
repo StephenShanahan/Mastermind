@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -20,11 +22,23 @@ import android.view.View.OnClickListener;
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     MediaPlayer mp;
+    int codeLength;
+    int[] code = {0};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());   // SHARED PREFERENCES
+        boolean boo = SP.getBoolean("duplicates", false);
+        String str = SP.getString("pegs", "1");
+        String colour = SP.getString("colours", "4");
+
+        if(str.equalsIgnoreCase("1")){
+            setContentView(R.layout.activity_main);
+        }
+        else
+            setContentView(R.layout.game_6);
 
         ImageButton redButton = (ImageButton) findViewById(R.id.redPeg);
         redButton.setOnClickListener(this);
@@ -41,19 +55,54 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         ImageButton codeButton = (ImageButton) findViewById(R.id.CodeButton);
         codeButton.setOnClickListener(this);
 
-        ImageButton lineButton = (ImageButton) findViewById(R.id.LineButton);
+        Button lineButton = (Button) findViewById(R.id.LineButton);
         lineButton.setOnClickListener(this);
 
-        ImageButton pegCodeButton = (ImageButton) findViewById(R.id.PegCodeButton);
-        pegCodeButton.setOnClickListener(this);
+       // ImageButton pegCodeButton = (ImageButton) findViewById(R.id.PegCodeButton);
+       // pegCodeButton.setOnClickListener(this);
+
+        ImageButton purpleButton = (ImageButton) findViewById(R.id.purplePeg);
+        purpleButton.setOnClickListener(this);
+
+        ImageButton orangeButton = (ImageButton) findViewById(R.id.orangePeg);
+        orangeButton.setOnClickListener(this);
+
+        if(colour.equalsIgnoreCase("5")){
+            purpleButton.setBackgroundColor(Color.parseColor("#ffffff"));
+            purpleButton.setImageResource(R.drawable.purple_peg2);
+        }
+        else if (colour.equalsIgnoreCase("6")){
+            purpleButton.setBackgroundColor(Color.parseColor("#ffffff"));
+            purpleButton.setImageResource(R.drawable.purple_peg2);
+
+            orangeButton.setBackgroundColor(Color.parseColor("#ffffff"));
+            orangeButton.setImageResource(R.drawable.orange_peg2);
+        }
 
         Peg.pegFalse();
 
-        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());   // SHARED PREFERENCES
-        boolean boo = SP.getBoolean("duplicates", false);
-        String str = SP.getString("pegs", "1");
+       // SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());   // SHARED PREFERENCES
+       // boolean boo = SP.getBoolean("duplicates", false);
+       // String str = SP.getString("pegs", "1");
         Code.setDuplicates(boo);
 
+
+        if(str.equalsIgnoreCase("2"))
+            codeLength = 6;
+        else
+            codeLength = 4;
+
+
+        Code.setColours(Integer.parseInt(colour));
+
+        Code.setCodeLength(codeLength);
+        Check.setCodeLength(codeLength);
+
+        code = Code.Generate();
+
+        Toast pieceToast;
+        pieceToast = Toast.makeText(getApplicationContext(), "codeLength is:" + codeLength, Toast.LENGTH_SHORT);
+        pieceToast.show();
 
     }
 
@@ -86,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     imgBus.setTag("1");
                     Check.setPegCode(1);
                 } else {
-                    pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
+                    pieceToast = Toast.makeText(getApplicationContext(), "Press the Check Button", Toast.LENGTH_SHORT);
                     pieceToast.show();
                 }
                 break;
@@ -104,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     imgBus.setTag("3");
                     Check.setPegCode(3);
                 } else {
-                    pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
+                    pieceToast = Toast.makeText(getApplicationContext(), "Press the Check Button", Toast.LENGTH_SHORT);
                     pieceToast.show();
                 }
 
@@ -123,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     imgBus.setTag("2");
                     Check.setPegCode(2);
                 } else {
-                    pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
+                    pieceToast = Toast.makeText(getApplicationContext(), "Press the Check Button", Toast.LENGTH_SHORT);
                     pieceToast.show();
                 }
 
@@ -141,7 +190,43 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     imgBus.setTag("4");
                     Check.setPegCode(4);
                 } else {
-                    pieceToast = Toast.makeText(getApplicationContext(), "Press the LineButton", Toast.LENGTH_SHORT);
+                    pieceToast = Toast.makeText(getApplicationContext(), "Press the Check Button", Toast.LENGTH_SHORT);
+                    pieceToast.show();
+                }
+
+                break;
+
+            case R.id.purplePeg:
+                b = Full();
+                if (b == false) {
+                    z = pegPosition();
+                    buttonID = "pegimage" + String.valueOf(z);
+                    // buttonID = position();
+                    resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+                    imgBus = ((ImageButton) findViewById(resID));
+                    imgBus.setImageResource(R.drawable.purple_peg2_nobg);
+                    imgBus.setTag("5");
+                    Check.setPegCode(5);
+                } else {
+                    pieceToast = Toast.makeText(getApplicationContext(), "Press the Check Button", Toast.LENGTH_SHORT);
+                    pieceToast.show();
+                }
+
+                break;
+
+            case R.id.orangePeg:
+                b = Full();
+                if (b == false) {
+                    z = pegPosition();
+                    buttonID = "pegimage" + String.valueOf(z);
+                    // buttonID = position();
+                    resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+                    imgBus = ((ImageButton) findViewById(resID));
+                    imgBus.setImageResource(R.drawable.orange_peg2_nobg);
+                    imgBus.setTag("6");
+                    Check.setPegCode(6);
+                } else {
+                    pieceToast = Toast.makeText(getApplicationContext(), "Press the Check Button", Toast.LENGTH_SHORT);
                     pieceToast.show();
                 }
 
@@ -164,7 +249,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
                 b = Full();
                 if(b == false){
-                    pieceToast = Toast.makeText(getApplicationContext(), "Please fill in all 4 peg slots", Toast.LENGTH_SHORT);
+                    pieceToast = Toast.makeText(getApplicationContext(), "Please fill in all available peg slots", Toast.LENGTH_SHORT);
                     pieceToast.show();
                 }
                 else {
@@ -205,7 +290,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
                 break;
 
-            case R.id.PegCodeButton:
+          /*  case R.id.PegCodeButton:
 
                 int[] test = Check.getPegCode();
                 String displayPegCode = "";
@@ -214,7 +299,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 }
                 pieceToast = Toast.makeText(getApplicationContext(), displayPegCode, Toast.LENGTH_SHORT);
                 pieceToast.show();
-                break;
+                break;*/
 
             default:
                 break;
@@ -247,7 +332,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     public int pegPosition() {
 
-        int[] pegList = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
+        int[] pegList4 = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
+
+        int[] pegList6 = {11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36, 41, 42, 43, 44, 45, 46, 51, 52, 53, 54, 55, 56, 61, 62, 63, 64, 65, 66, 71, 72, 73, 74, 75, 76, 81, 82, 83, 84, 85, 86, 91, 92, 93, 94, 95, 96, 101, 102, 103, 104, 105, 106};
+
+        int[] pegList = {0};
 
         int x = 0;
         int z = 0;
@@ -255,13 +344,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         int testID;
         String image2;
 
+        if(codeLength == 4)
+            pegList = pegList4.clone();
+        else if(codeLength == 6)
+            pegList = pegList6.clone();
+
         for (int i = 0; i < pegList.length; i++) {
             image2 = "pegimage" + String.valueOf(pegList[i]);
             testID = getResources().getIdentifier(image2, "id", getPackageName());
             testImg = ((ImageButton) findViewById(testID));
             if (!testImg.getTag().toString().matches("\\d")) {
                 x = i;
-                i = i + 40;
+                i = i + 100;
             }
 
         }
@@ -272,10 +366,31 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     public boolean Full() {
-        int[] pegList = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
+        int[] pegList4 = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
+
+        int[] pegList6 = {11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36, 41, 42, 43, 44, 45, 46, 51, 52, 53, 54, 55, 56, 61, 62, 63, 64, 65, 66, 71, 72, 73, 74, 75, 76, 81, 82, 83, 84, 85, 86, 91, 92, 93, 94, 95, 96, 101, 102, 103, 104, 105, 106};
+
+        int[] pegList = {0};
+
+        int constant=0;
+
+        if(codeLength == 4) {
+            pegList = pegList4.clone();
+            constant = 4;
+        }
+        else if(codeLength == 6) {
+            pegList = pegList6.clone();
+            constant = 6;
+        }
 
 
-        ImageButton testImg1, testImg2, testImg3, testImg4;
+        ImageButton testImg1, testImg2, testImg3, testImg4, testImg5, testImg6;
+
+        int placeholder;
+        placeholder = getResources().getIdentifier("pegimage11", "id", getPackageName());
+        testImg5 = ((ImageButton) findViewById(placeholder));
+
+        testImg6 = ((ImageButton) findViewById(placeholder));
 
         int testID;
         String image2;
@@ -285,7 +400,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         if (release == true) {
             c = Check.getCountCode().size();
         }
-        for (int a = c; a < pegList.length; a = a + 4) {
+        for (int a = c; a < pegList.length; a = a + constant) {
 
             image2 = "pegimage" + String.valueOf(pegList[a]);
             testID = getResources().getIdentifier(image2, "id", getPackageName());
@@ -302,18 +417,43 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             image2 = "pegimage" + String.valueOf(pegList[a + 3]);
             testID = getResources().getIdentifier(image2, "id", getPackageName());
             testImg4 = ((ImageButton) findViewById(testID));
-            if (testImg1.getTag().toString().matches("\\d") && testImg2.getTag().toString().matches("\\d") &&
-                    testImg3.getTag().toString().matches("\\d") && testImg4.getTag().toString().matches("\\d")) {
-                b = true;
-                a = 50;
-            } else
-                b = false;
+
+            if(constant == 6) {
+                image2 = "pegimage" + String.valueOf(pegList[a + 4]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg5 = ((ImageButton) findViewById(testID));
+
+                image2 = "pegimage" + String.valueOf(pegList[a + 5]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg6 = ((ImageButton) findViewById(testID));
+
+            }
+
+            if(constant == 4) {
+
+                if (testImg1.getTag().toString().matches("\\d") && testImg2.getTag().toString().matches("\\d") &&
+                        testImg3.getTag().toString().matches("\\d") && testImg4.getTag().toString().matches("\\d")) {
+                    b = true;
+                    a = 100;
+                } else
+                    b = false;
+            }
+            else if(constant == 6){
+                if(testImg1.getTag().toString().matches("\\d") && testImg2.getTag().toString().matches("\\d") &&
+                        testImg3.getTag().toString().matches("\\d") && testImg4.getTag().toString().matches("\\d")
+                        && testImg5.getTag().toString().matches("\\d") && testImg6.getTag().toString().matches("\\d")){
+                    b = true;
+                    a = 100;
+                }
+                else
+                    b = false;
+            }
         }
 
         return b;
     }
 
-    int[] code = Code.Generate();
+    //int[] code = Code.Generate();
 
     public int[] codeGenerator() {
 
@@ -324,14 +464,23 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         int[] pinsNeeded = pins;
 
-        int[] pinList = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
+        int[] pinList4 = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
+
+        int[] pinList6 = {11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36, 41, 42, 43, 44, 45, 46, 51, 52, 53, 54, 55, 56, 61, 62, 63, 64, 65, 66, 71, 72, 73, 74, 75, 76, 81, 82, 83, 84, 85, 86, 91, 92, 93, 94, 95, 96, 101, 102, 103, 104, 105, 106};
+
+        int[] pinList = {0};
+
+        if(codeLength == 4)
+            pinList = pinList4.clone();
+        else if(codeLength == 6)
+            pinList = pinList6.clone();
 
 
         int black = pinsNeeded[0];
         int white = pinsNeeded[1];
         int colour = white + black;
 
-        ImageView testImg1, testImg2, testImg3, testImg4;
+        ImageView testImg1, testImg2, testImg3, testImg4,testImg5,testImg6;
 
         int testID;
         String image2;
@@ -339,10 +488,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         int c = 0;
         if (release == true) {
             c = Check.getCountCode().size();
-            c = c - 4;
+            if(codeLength == 4)
+                c = c - 4;
+            else if(codeLength == 6)
+                c = c-6;
         }
 
-        for (int a = c; a < pinList.length; a = a + 49) {
+        for (int a = c; a < pinList.length; a = a + 100) {
 
             if (colour == 1) {
 
@@ -496,6 +648,173 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     }
                     testImg4.setTag("full");
                 }
+            }  else if(colour == 5){
+
+                image2 = "pinImage" + String.valueOf(pinList[a]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg1 = ((ImageView) findViewById(testID));
+                if (testImg1.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg1.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg1.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg1.setTag("full");
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[a + 1]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg2 = ((ImageView) findViewById(testID));
+                if (testImg2.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg2.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg2.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg2.setTag("full");
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[a + 2]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg3 = ((ImageView) findViewById(testID));
+                if (testImg3.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg3.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg3.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg3.setTag("full");
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[a + 3]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg4 = ((ImageView) findViewById(testID));
+                if (testImg4.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg4.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg4.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg4.setTag("full");
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[a + 4]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg5 = ((ImageView) findViewById(testID));
+                if (testImg5.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg5.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg5.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg4.setTag("full");
+                }
+            }   else if(colour == 6){
+
+                image2 = "pinImage" + String.valueOf(pinList[a]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg1 = ((ImageView) findViewById(testID));
+                if (testImg1.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg1.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg1.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg1.setTag("full");
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[a + 1]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg2 = ((ImageView) findViewById(testID));
+                if (testImg2.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg2.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg2.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg2.setTag("full");
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[a + 2]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg3 = ((ImageView) findViewById(testID));
+                if (testImg3.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg3.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg3.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg3.setTag("full");
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[a + 3]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg4 = ((ImageView) findViewById(testID));
+                if (testImg4.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg4.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg4.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg4.setTag("full");
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[a + 4]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg5 = ((ImageView) findViewById(testID));
+                if (testImg5.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg5.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg5.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg4.setTag("full");
+                }
+
+                image2 = "pinImage" + String.valueOf(pinList[a + 5]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg6 = ((ImageView) findViewById(testID));
+                if (testImg6.getTag().toString().matches("empty")) {
+                    if(black>0) {
+                        testImg6.setImageResource(R.drawable.blackpin);
+                        black--;
+                    }
+                    else if(white>0){
+                        testImg6.setImageResource(R.drawable.whitepin);
+                        white--;
+                    }
+                    testImg4.setTag("full");
+                }
             }
         }
     }
@@ -520,7 +839,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         int x;
 
-        if(IdAsString1.matches("101") || IdAsString1.matches("102") || IdAsString1.matches("103") || IdAsString1.matches("104")){
+        if(IdAsString1.matches("101") || IdAsString1.matches("102") || IdAsString1.matches("103") || IdAsString1.matches("104") || IdAsString.matches("105") || IdAsString.matches("106")){
             x = Integer.parseInt(IdAsString1.substring(2));
         }
         else {
@@ -543,6 +862,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 mp.release();
                 mp = null;
             }
+    }
+
+    public void Colours(){
+
+       /* if(colours == 5)
+            enable purple
+        else if 6
+                enable orange*/
+
     }
 
 

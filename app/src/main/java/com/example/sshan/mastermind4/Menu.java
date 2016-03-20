@@ -2,8 +2,10 @@ package com.example.sshan.mastermind4;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,5 +81,10 @@ public class Menu extends AppCompatActivity{
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public String pegNumber(){
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());   // SHARED PREFERENCES
+        return SP.getString("pegs", "1");
     }
 }
