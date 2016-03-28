@@ -2,7 +2,6 @@ package com.example.sshan.mastermind4;
 
 
 import java.util.ArrayList;
-//import java.util.Iterator;
 
 public class Check {
 

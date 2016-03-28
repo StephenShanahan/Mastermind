@@ -57,4 +57,13 @@
         android:layout_alignEnd="@+id/button_How"
         android:background="#ff1f47" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Credits"
+        android:id="@+id/button_test"
+        android:layout_below="@+id/button_How"
+        android:layout_alignLeft="@+id/button_Options"
+        android:layout_alignStart="@+id/button_Options" />
+
 </RelativeLayout>

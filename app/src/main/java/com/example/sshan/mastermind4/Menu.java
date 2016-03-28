@@ -10,23 +10,41 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Menu extends AppCompatActivity{
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
+
 
         Button button_Play = (Button) findViewById(R.id.button_Play);
         button_Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //boolean b = Options.getDuplicates();
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
-                startActivityForResult(intent, 0);
-                Check.clearPegCode();
-                Check.clearCountcode();
+
+                boolean boo = duplicatePegs();
+                String pegs = pegNumber();
+                String colour = pegColour();
+                boolean b;
+                if((colour.matches("6")) || (colour.matches("7")) || (colour.matches("8")))
+                    b = true;
+                else
+                    b = false;
+
+                if ((!boo) && (pegs.matches("2")) &&(!b)){ // (!colour.matches("6"))){
+                    Toast pieceToast;
+                    pieceToast = Toast.makeText(getApplicationContext(), "Error! Please check Options.", Toast.LENGTH_SHORT);
+                    pieceToast.show();
+                } else {
+                    Intent intent = new Intent(v.getContext(), MainActivity.class);
+                    startActivityForResult(intent, 0);
+                    Check.clearPegCode();
+                    Check.clearCountcode();
+                }
             }
         });
 
@@ -45,7 +63,6 @@ public class Menu extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                //Options.setDuplicates();
                 Intent intent = new Intent(v.getContext(), Preferences.class);
                 startActivityForResult(intent, 0);
             }
@@ -57,6 +74,16 @@ public class Menu extends AppCompatActivity{
             public void onClick(View v) {
 
                 finish();
+            }
+        });
+
+        Button button_Credits = (Button) findViewById(R.id.button_test);
+        button_Credits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(v.getContext(), Credits.class);
+                startActivityForResult(intent, 0);
             }
         });
     }
@@ -84,7 +111,17 @@ public class Menu extends AppCompatActivity{
     }
 
     public String pegNumber(){
-        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());   // SHARED PREFERENCES
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         return SP.getString("pegs", "1");
+    }
+
+    public String pegColour(){
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        return SP.getString("colours", "4");
+    }
+
+    public boolean duplicatePegs(){
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        return SP.getBoolean("duplicates", false);
     }
 }

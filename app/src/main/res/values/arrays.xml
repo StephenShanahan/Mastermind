@@ -3,22 +3,24 @@
     <string-array name="listentries">
         <item>4 Pegs</item>
         <item>6 Pegs</item>
-        <item>8 Pegs</item>
     </string-array>
     <string-array name="listvalues">
         <item>1</item>
         <item>2</item>
-        <item>3</item>
     </string-array>
 
     <string-array name="Colourentries">
         <item>4 Colours</item>
         <item>5 Colours</item>
         <item>6 Colours</item>
+        <item>7 Colours</item>
+        <item>8 Colours</item>
     </string-array>
     <string-array name="Colourvalues">
         <item>4</item>
         <item>5</item>
         <item>6</item>
+        <item>7</item>
+        <item>8</item>
     </string-array>
 </resources>

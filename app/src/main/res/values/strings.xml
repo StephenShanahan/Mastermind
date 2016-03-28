@@ -8,11 +8,13 @@
     <string name="Option_buttontext">Options</string>
     <string name="How_buttontext">How to Play</string>
     <string name="title_activity_game">Game</string>
-    <string name="dialog_text">Congratulations! You cracked the code! Would you like to play another game?</string>
+    <string name="dialog_text_win">Congratulations! You cracked the code! Would you like to play another game?</string>
+    <string name="dialog_text_lose">Sorry! You failed to crack the code! Would you like to play again?</string>
     <string name="Duplicates_title">Allow Duplicates:</string>
     <string name="NumberPeg_title">Number of Pegs:</string>
     <string name="NumberColour_title">Number of Colours:</string>
     <string name="Options_title">Options</string>
     <string name="Exit">Exit App</string>
+    <string name="Colour_Error">Error! To play Mastermind with less Colours than Pegs, please turn duplicates on.</string>
     <string name="How_To">Mastermind is a classic puzzle game from the Seventies. The object of the game is to guess a hidden colour code. The computer will create a combination of colours and it is up to you to guess these.\nYou will have 10 guesses to crack this code. Simply click the coloured Peg along the side of the screen you wish to put in you guess and after you have inputted a Peg into every empty slot in a row, click the Check button to test your code against the computers.\nAfter clicking the Check button, a black or white Pin may appear next to your guess:\nA black Pin means you have placed the correct coloured Peg in the correct position.\nA White Pin means you have the right coloured Peg in the wrong position.\nTo Undo any Peg you have placed, simply click on the Peg in your guess to remove it and proceed as normal.\nHave fun! </string>
 </resources>

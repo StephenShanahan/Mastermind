@@ -104,6 +104,30 @@
         android:tag="transparent"/>
     <!--android:src="@drawable/orange_peg2"-->
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pinkPeg"
+        android:background="@null"
+        android:layout_above="@+id/orangePeg"
+        android:layout_alignLeft="@+id/orangePeg"
+        android:layout_alignStart="@+id/orangePeg"
+        android:onClick="onClick"
+        android:tag="transparent"/>
+    <!--android:src="@drawable/pink_peg2"-->
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/evergreenPeg"
+        android:background="@null"
+        android:layout_above="@+id/pinkPeg"
+        android:layout_alignLeft="@+id/pinkPeg"
+        android:layout_alignStart="@+id/pinkPeg"
+        android:onClick="onClick"
+        android:tag="transparent"/>
+    <!--android:src="@drawable/evergreen_peg2"-->
+
      <LinearLayout
 
         android:orientation="vertical"
@@ -1920,5 +1944,38 @@
 
          </RelativeLayout>
      </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage1"
+        android:layout_above="@+id/LineButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage2"
+        android:layout_alignBottom="@+id/codeimage1"
+        android:layout_toRightOf="@+id/codeimage1"
+        android:layout_toEndOf="@+id/codeimage1"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage3"
+        android:layout_alignBottom="@+id/codeimage2"
+        android:layout_toRightOf="@+id/codeimage2"
+        android:layout_toEndOf="@+id/codeimage2" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage4"
+        android:layout_alignBottom="@+id/codeimage3"
+        android:layout_toRightOf="@+id/codeimage3"
+        android:layout_toEndOf="@+id/codeimage3" />
 
 </RelativeLayout>

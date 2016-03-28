@@ -34,7 +34,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:src="#0a00ff"
-        android:layout_marginTop="119dp"/>
+        android:layout_marginTop="100dp"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -100,6 +100,30 @@
         android:layout_above="@+id/purplePeg"
         android:layout_alignLeft="@+id/purplePeg"
         android:layout_alignStart="@+id/purplePeg"
+        android:onClick="onClick"
+        android:tag="transparent"/>
+    <!--android:src="@drawable/orange_peg2"-->
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pinkPeg"
+        android:background="@null"
+        android:layout_above="@+id/orangePeg"
+        android:layout_alignLeft="@+id/orangePeg"
+        android:layout_alignStart="@+id/orangePeg"
+        android:onClick="onClick"
+        android:tag="transparent"/>
+    <!--android:src="@drawable/purple_peg2"-->
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/evergreenPeg"
+        android:background="@null"
+        android:layout_above="@+id/pinkPeg"
+        android:layout_alignLeft="@+id/pinkPeg"
+        android:layout_alignStart="@+id/pinkPeg"
         android:onClick="onClick"
         android:tag="transparent"/>
     <!--android:src="@drawable/orange_peg2"-->
@@ -2791,5 +2815,54 @@
 
         </RelativeLayout>
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage1"
+        android:layout_above="@+id/LineButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage2"
+        android:layout_alignBottom="@+id/codeimage1"
+        android:layout_toRightOf="@+id/codeimage1"
+        android:layout_toEndOf="@+id/codeimage1"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage3"
+        android:layout_alignBottom="@+id/codeimage2"
+        android:layout_toRightOf="@+id/codeimage2"
+        android:layout_toEndOf="@+id/codeimage2" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage4"
+        android:layout_alignBottom="@+id/codeimage3"
+        android:layout_toRightOf="@+id/codeimage3"
+        android:layout_toEndOf="@+id/codeimage3" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage5"
+        android:layout_alignBottom="@+id/codeimage4"
+        android:layout_toRightOf="@+id/codeimage4"
+        android:layout_toEndOf="@+id/codeimage4" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeimage6"
+        android:layout_alignBottom="@+id/codeimage5"
+        android:layout_toRightOf="@+id/codeimage5"
+        android:layout_toEndOf="@+id/codeimage5" />
 
 </RelativeLayout>
