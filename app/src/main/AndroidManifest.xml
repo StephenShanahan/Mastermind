@@ -35,7 +35,7 @@
         </activity>
         <activity
             android:name=".Credits"
-            android:label="@string/Options_title">
+            android:label="@string/Credits">
         </activity>
         <activity
             android:name=".Preferences">

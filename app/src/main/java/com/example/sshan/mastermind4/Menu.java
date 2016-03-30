@@ -35,7 +35,7 @@ public class Menu extends AppCompatActivity{
                 else
                     b = false;
 
-                if ((!boo) && (pegs.matches("2")) &&(!b)){ // (!colour.matches("6"))){
+                if ((!boo) && (pegs.matches("2")) &&(!b)){
                     Toast pieceToast;
                     pieceToast = Toast.makeText(getApplicationContext(), "Error! Please check Options.", Toast.LENGTH_SHORT);
                     pieceToast.show();
@@ -77,7 +77,7 @@ public class Menu extends AppCompatActivity{
             }
         });
 
-        Button button_Credits = (Button) findViewById(R.id.button_test);
+        Button button_Credits = (Button) findViewById(R.id.button_Credits);
         button_Credits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

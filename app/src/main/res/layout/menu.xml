@@ -60,8 +60,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Credits"
-        android:id="@+id/button_test"
+        android:text="@string/Credits"
+        android:id="@+id/button_Credits"
         android:layout_below="@+id/button_How"
         android:layout_alignLeft="@+id/button_Options"
         android:layout_alignStart="@+id/button_Options" />

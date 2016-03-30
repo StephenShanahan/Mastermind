@@ -7,186 +7,71 @@
     android:background="@drawable/wood_bgtest"
     android:id="@+id/gameView">
 
-    <!--<ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/PegCodeButton"
-        android:layout_above="@+id/LineButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:src="#00ff14" />-->
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/LineButton"
-        android:text="Check"
-        android:layout_below="@+id/greenPeg"
-        android:layout_toLeftOf="@+id/redPeg"
-        android:layout_marginRight="21dp"
-        android:layout_marginEnd="21dp" />
-
     <ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:id="@+id/CodeButton"
-        android:layout_above="@+id/linearLayout"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:src="#0a00ff"
-        android:layout_marginTop="100dp"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/redPeg"
-        android:src="@drawable/red_peg2"
-        android:background="#ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="onClick" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/greenPeg"
-        android:src="@drawable/green_peg2"
-        android:background="#ffffff"
-        android:layout_above="@+id/redPeg"
-        android:layout_alignLeft="@+id/redPeg"
-        android:layout_alignStart="@+id/redPeg"
-        android:onClick="onClick" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/yellowPeg"
-        android:src="@drawable/yellow_peg2"
-        android:background="#ffffff"
-        android:layout_above="@+id/greenPeg"
-        android:layout_alignLeft="@+id/greenPeg"
-        android:layout_alignStart="@+id/greenPeg"
-        android:onClick="onClick" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bluePeg"
-        android:src="@drawable/blue_peg2"
-        android:background="#ffffff"
-        android:layout_above="@+id/yellowPeg"
-        android:layout_alignLeft="@+id/yellowPeg"
-        android:layout_alignStart="@+id/yellowPeg"
-        android:onClick="onClick"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/purplePeg"
-        android:background="@null"
-        android:layout_above="@+id/bluePeg"
-        android:layout_alignLeft="@+id/bluePeg"
-        android:layout_alignStart="@+id/bluePeg"
-        android:onClick="onClick"
-        android:tag="transparent"
-        android:clickable="false"/>
-    <!--android:src="@drawable/purple_peg2"-->
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/orangePeg"
-        android:background="@null"
-        android:layout_above="@+id/purplePeg"
-        android:layout_alignLeft="@+id/purplePeg"
-        android:layout_alignStart="@+id/purplePeg"
-        android:onClick="onClick"
-        android:tag="transparent"
-        android:clickable="false"/>
-    <!--android:src="@drawable/orange_peg2"-->
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pinkPeg"
-        android:background="@null"
-        android:layout_above="@+id/orangePeg"
-        android:layout_alignLeft="@+id/orangePeg"
-        android:layout_alignStart="@+id/orangePeg"
-        android:onClick="onClick"
-        android:tag="transparent"
-        android:clickable="false"/>
-    <!--android:src="@drawable/purple_peg2"-->
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/evergreenPeg"
-        android:background="@null"
-        android:layout_above="@+id/pinkPeg"
-        android:layout_alignLeft="@+id/pinkPeg"
-        android:layout_alignStart="@+id/pinkPeg"
-        android:onClick="onClick"
-        android:tag="transparent"
-        android:clickable="false"/>
-    <!--android:src="@drawable/orange_peg2"-->
+        android:layout_above="@+id/LineButton"
+        android:layout_alignRight="@+id/LineButton"
+        android:layout_alignEnd="@+id/LineButton" />
 
     <LinearLayout
 
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2">
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow10">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg101"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg102"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg101"
                 android:layout_toEndOf="@+id/peg101" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg103"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg102"
                 android:layout_toEndOf="@+id/peg102" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg104"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg103"
                 android:layout_toEndOf="@+id/peg103" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg105"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg104"
                 android:layout_toEndOf="@+id/peg104" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg106"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg105"
                 android:layout_toEndOf="@+id/peg105" />
 
@@ -408,53 +293,53 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow9">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg91"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg92"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg91"
                 android:layout_toEndOf="@+id/peg91" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg93"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg92"
                 android:layout_toEndOf="@+id/peg92" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg94"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg93"
                 android:layout_toEndOf="@+id/peg93" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg95"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg94"
                 android:layout_toEndOf="@+id/peg94" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg96"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg95"
                 android:layout_toEndOf="@+id/peg95" />
 
@@ -676,53 +561,53 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow8">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg81"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg82"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg81"
                 android:layout_toEndOf="@+id/peg81" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg83"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg82"
                 android:layout_toEndOf="@+id/peg82" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg84"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg83"
                 android:layout_toEndOf="@+id/peg83" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg85"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg84"
                 android:layout_toEndOf="@+id/peg84" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg86"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg85"
                 android:layout_toEndOf="@+id/peg85" />
 
@@ -945,53 +830,53 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow7">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg71"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg72"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg71"
                 android:layout_toEndOf="@+id/peg71" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg73"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg72"
                 android:layout_toEndOf="@+id/peg72" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg74"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg73"
                 android:layout_toEndOf="@+id/peg73" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg75"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg74"
                 android:layout_toEndOf="@+id/peg74" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg76"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg75"
                 android:layout_toEndOf="@+id/peg75" />
 
@@ -1213,53 +1098,53 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow6">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg61"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg62"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg61"
                 android:layout_toEndOf="@+id/peg61" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg63"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg62"
                 android:layout_toEndOf="@+id/peg62" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg64"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg63"
                 android:layout_toEndOf="@+id/peg63" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg65"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg64"
                 android:layout_toEndOf="@+id/peg64" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg66"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg65"
                 android:layout_toEndOf="@+id/peg65" />
 
@@ -1481,53 +1366,53 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow5">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg51"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg52"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg51"
                 android:layout_toEndOf="@+id/peg51" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg53"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg52"
                 android:layout_toEndOf="@+id/peg52" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg54"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg53"
                 android:layout_toEndOf="@+id/peg53" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg55"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg54"
                 android:layout_toEndOf="@+id/peg54" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg56"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg55"
                 android:layout_toEndOf="@+id/peg55" />
 
@@ -1749,53 +1634,53 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow4">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg41"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg42"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg41"
                 android:layout_toEndOf="@+id/peg41" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg43"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg42"
                 android:layout_toEndOf="@+id/peg42" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg44"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg43"
                 android:layout_toEndOf="@+id/peg43" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg45"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg44"
                 android:layout_toEndOf="@+id/peg44" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg46"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg45"
                 android:layout_toEndOf="@+id/peg45" />
 
@@ -2017,53 +1902,53 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow3">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg31"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg32"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg31"
                 android:layout_toEndOf="@+id/peg31" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg33"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg32"
                 android:layout_toEndOf="@+id/peg32" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg34"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg33"
                 android:layout_toEndOf="@+id/peg33" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg35"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg34"
                 android:layout_toEndOf="@+id/peg34" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg36"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg35"
                 android:layout_toEndOf="@+id/peg35" />
 
@@ -2285,53 +2170,53 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow2">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg21"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg22"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg21"
                 android:layout_toEndOf="@+id/peg21" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg23"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg22"
                 android:layout_toEndOf="@+id/peg22" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg24"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg23"
                 android:layout_toEndOf="@+id/peg23" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg25"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg24"
                 android:layout_toEndOf="@+id/peg24" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg26"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg25"
                 android:layout_toEndOf="@+id/peg25" />
 
@@ -2553,53 +2438,53 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="38.5dp"
+            android:layout_height="35dp"
             android:id="@+id/gameRow1">
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg11"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_alignParentBottom="true" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg12"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg11"
                 android:layout_toEndOf="@+id/peg11" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg13"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg12"
                 android:layout_toEndOf="@+id/peg12" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg14"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg13"
                 android:layout_toEndOf="@+id/peg13" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg15"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg14"
                 android:layout_toEndOf="@+id/peg14" />
 
             <ImageView
-                android:layout_width="38.5dp"
-                android:layout_height="38.5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:id="@+id/peg16"
-                android:src="@drawable/pegslot_woodtest"
+                android:src="@drawable/wood_bgtest_small"
                 android:layout_toRightOf="@+id/peg15"
                 android:layout_toEndOf="@+id/peg15" />
 
@@ -2825,9 +2710,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/codeimage1"
         android:layout_above="@+id/LineButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="13dp" />
+        android:layout_toRightOf="@+id/textAnswer"
+        android:layout_toEndOf="@+id/textAnswer" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -2843,7 +2727,7 @@
         android:id="@+id/codeimage3"
         android:layout_alignBottom="@+id/codeimage2"
         android:layout_toRightOf="@+id/codeimage2"
-        android:layout_toEndOf="@+id/codeimage2" />
+        android:layout_toEndOf="@+id/codeimage2"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -2851,7 +2735,7 @@
         android:id="@+id/codeimage4"
         android:layout_alignBottom="@+id/codeimage3"
         android:layout_toRightOf="@+id/codeimage3"
-        android:layout_toEndOf="@+id/codeimage3" />
+        android:layout_toEndOf="@+id/codeimage3"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -2859,7 +2743,7 @@
         android:id="@+id/codeimage5"
         android:layout_alignBottom="@+id/codeimage4"
         android:layout_toRightOf="@+id/codeimage4"
-        android:layout_toEndOf="@+id/codeimage4" />
+        android:layout_toEndOf="@+id/codeimage4"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -2867,6 +2751,123 @@
         android:id="@+id/codeimage6"
         android:layout_alignBottom="@+id/codeimage5"
         android:layout_toRightOf="@+id/codeimage5"
-        android:layout_toEndOf="@+id/codeimage5" />
+        android:layout_toEndOf="@+id/codeimage5"/>
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/redPeg"
+        android:src="@drawable/red_peg2_small_test"
+        android:background="#ffffff"
+        android:onClick="onClick"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/greenPeg"
+        android:src="@drawable/green_peg2_small_test"
+        android:background="#ffffff"
+        android:onClick="onClick"
+        android:layout_alignTop="@+id/redPeg"
+        android:layout_toRightOf="@+id/redPeg"
+        android:layout_toEndOf="@+id/redPeg" />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/yellowPeg"
+        android:src="@drawable/yellow_peg2_small_test"
+        android:background="#ffffff"
+        android:onClick="onClick"
+        android:layout_alignBottom="@+id/greenPeg"
+        android:layout_toRightOf="@+id/greenPeg"
+        android:layout_toEndOf="@+id/greenPeg" />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/bluePeg"
+        android:src="@drawable/blue_peg2_small_test"
+        android:background="#ffffff"
+        android:onClick="onClick"
+        android:layout_alignBottom="@+id/yellowPeg"
+        android:layout_toRightOf="@+id/yellowPeg"
+        android:layout_toEndOf="@+id/yellowPeg" />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/purplePeg"
+        android:onClick="onClick"
+        android:background="@null"
+        android:tag="transparent"
+        android:clickable="false"
+        android:layout_alignTop="@+id/bluePeg"
+        android:layout_toRightOf="@+id/bluePeg"
+        android:layout_toEndOf="@+id/bluePeg" />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/orangePeg"
+        android:onClick="onClick"
+        android:background="@null"
+        android:tag="transparent"
+        android:clickable="false"
+        android:layout_alignBottom="@+id/purplePeg"
+        android:layout_toRightOf="@+id/purplePeg"
+        android:layout_toEndOf="@+id/purplePeg" />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/pinkPeg"
+        android:onClick="onClick"
+        android:background="@null"
+        android:tag="transparent"
+        android:clickable="false"
+        android:layout_alignBottom="@+id/orangePeg"
+        android:layout_toRightOf="@+id/orangePeg"
+        android:layout_toEndOf="@+id/orangePeg" />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/evergreenPeg"
+        android:onClick="onClick"
+        android:background="@null"
+        android:tag="transparent"
+        android:clickable="false"
+        android:layout_alignTop="@+id/pinkPeg"
+        android:layout_toRightOf="@+id/pinkPeg"
+        android:layout_toEndOf="@+id/pinkPeg" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LineButton"
+        android:text="Check"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/Answer"
+        android:id="@+id/textAnswer"
+        android:textSize="11.5sp"
+        android:layout_above="@+id/LineButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="17dp"
+        android:visibility="invisible"/>
 
 </RelativeLayout>

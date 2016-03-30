@@ -75,36 +75,5 @@ public class Preferences extends PreferenceActivity {
 
         }
 
-       /* public static void setPref(){
-
-            SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences();   // SHARED PREFERENCES
-            boo = SP.getBoolean("duplicates", false);
-            pegs = SP.getString("pegs", "1");
-            colour = SP.getString("colours", "4");
-        }
-
-        public static boolean getBoo(){
-            return boo;
-        }
-        public static String getPeg(){
-            return pegs;
-        }
-        public static String getColour(){
-            return colour;
-        }
-
-        public static boolean isPlayable(){
-
-            boo = getBoo();
-            pegs = getPeg();
-            colour = getColour();
-
-            if ((!boo) && (pegs.matches("2")) && (!colour.matches("6"))) {
-                return false;
-            }
-            else return true;
-
-        }
-*/
     }
 }
