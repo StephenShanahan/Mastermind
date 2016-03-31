@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         Check.setCodeLength(codeLength);
 
         code = Code.Generate();
+
     }
 
     public void onClick(View v) {
@@ -206,9 +207,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                     imgBus = ((ImageButton) findViewById(resID));
                     if(constant)
-                        imgBus.setImageResource(R.drawable.purple_peg2_nobg_small);
+                        imgBus.setImageResource(R.drawable.purple_peg2_light_nobg_small);
                     else
-                        imgBus.setImageResource(R.drawable.purple_peg2_nobg);
+                        imgBus.setImageResource(R.drawable.purple_peg2_light_nobg);//purple_peg2_nobg
 
                     imgBus.setTag("5");
                     Check.setPegCode(5);
@@ -303,6 +304,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     pieceToast.show();
                 }
                 else {
+                    removeUndo();
                     Peg.pegRelease();
                     win = Check.CheckGame(code);
                     pins = Check.ReturnPins();
@@ -937,21 +939,30 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         else if(codeLength == 6)
             constant = 6;
 
-        if(colour == 5){
-            purpleButton.setBackgroundColor(Color.parseColor("#ffffff")); // 29th - changed drawable to small
+        if(colour == 4){
+            purpleButton.setClickable(false);
+            orangeButton.setClickable(false);
+            pinkButton.setClickable(false);
+            evergreenButton.setClickable(false);
+        }
+        else if(colour == 5){
+            purpleButton.setBackgroundColor(Color.parseColor("#ffffff"));
             if(constant == 4)
-                purpleButton.setImageResource(R.drawable.purple_peg2);
+                purpleButton.setImageResource(R.drawable.purple_peg2_light);
             else
-                purpleButton.setImageResource(R.drawable.purple_peg2_small_test);
+                purpleButton.setImageResource(R.drawable.purple_peg2_light_small_test);
 
             purpleButton.setClickable(true);
+            orangeButton.setClickable(false);
+            pinkButton.setClickable(false);
+            evergreenButton.setClickable(false);
         }
         else if (colour == 6){
-            purpleButton.setBackgroundColor(Color.parseColor("#ffffff")); // 29th - changed drawable to small
+            purpleButton.setBackgroundColor(Color.parseColor("#ffffff"));
             if(constant == 4)
-                purpleButton.setImageResource(R.drawable.purple_peg2);
+                purpleButton.setImageResource(R.drawable.purple_peg2_light);
             else
-                purpleButton.setImageResource(R.drawable.purple_peg2_small_test);
+                purpleButton.setImageResource(R.drawable.purple_peg2_light_small_test);
 
             purpleButton.setClickable(true);
 
@@ -962,15 +973,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 orangeButton.setImageResource(R.drawable.orange_peg2_small_test);
 
             orangeButton.setClickable(true);
+            pinkButton.setClickable(false);
+            evergreenButton.setClickable(false);
 
         }
 
         else if (colour == 7){
-            purpleButton.setBackgroundColor(Color.parseColor("#ffffff")); // 29th - changed drawable to small
+            purpleButton.setBackgroundColor(Color.parseColor("#ffffff"));
             if(constant == 4)
-                purpleButton.setImageResource(R.drawable.purple_peg2);
+                purpleButton.setImageResource(R.drawable.purple_peg2_light);
             else
-                purpleButton.setImageResource(R.drawable.purple_peg2_small_test);
+                purpleButton.setImageResource(R.drawable.purple_peg2_light_small_test);
 
             purpleButton.setClickable(true);
 
@@ -989,14 +1002,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 pinkButton.setImageResource(R.drawable.pink_peg2_small_test);
 
             pinkButton.setClickable(true);
+            evergreenButton.setClickable(false);
         }
 
         else if (colour == 8){
-            purpleButton.setBackgroundColor(Color.parseColor("#ffffff")); // 29th - changed drawable to small
+            purpleButton.setBackgroundColor(Color.parseColor("#ffffff"));
             if(constant == 4)
-                purpleButton.setImageResource(R.drawable.purple_peg2);
+                purpleButton.setImageResource(R.drawable.purple_peg2_light);
             else
-                purpleButton.setImageResource(R.drawable.purple_peg2_small_test);
+                purpleButton.setImageResource(R.drawable.purple_peg2_light_small_test);
 
             purpleButton.setClickable(true);
 
@@ -1030,9 +1044,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         int[] codeList = codeGenerator();
 
-        String[] colours = {"red_peg_nobg", "blue_peg2_nobg", "green_peg2_nobg", "yellow_peg2_nobg", "purple_peg2_nobg", "orange_peg2_nobg", "pink_peg2_nobg", "evergreen_peg2_nobg"};
+        String[] colours = {"red_peg_nobg", "blue_peg2_nobg", "green_peg2_nobg", "yellow_peg2_nobg", "purple_peg2_light_nobg", "orange_peg2_nobg", "pink_peg2_nobg", "evergreen_peg2_nobg"};
 
-        String[] colours6 = {"red_peg2_small_test", "blue_peg2_small_test", "green_peg2_small_test", "yellow_peg2_small_test", "purple_peg2_small_test", "orange_peg2_small_test", "pink_peg2_small_test", "evergreen_peg2_small_test"};
+        String[] colours6 = {"red_peg2_small_test", "blue_peg2_small_test", "green_peg2_small_test", "yellow_peg2_small_test", "purple_peg2_light_small_test", "orange_peg2_small_test", "pink_peg2_small_test", "evergreen_peg2_small_test"};
 
         int constant;
         String image;
@@ -1092,7 +1106,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             image = "codeimage5";
             testID = getResources().getIdentifier(image, "id", getPackageName());
             codeImg5 = ((ImageView) findViewById(testID));
-            if(constant == 4)
+            if(constant == 4)   //fix for later
                 id5 = getResources().getIdentifier( getPackageName() + ":drawable/" + colours[codeList[4] - 1], null, null);
             else
                 id5 = getResources().getIdentifier( getPackageName() + ":drawable/" + colours6[codeList[4] - 1], null, null);
@@ -1122,6 +1136,90 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         TextView answerText = (TextView) findViewById(R.id.textAnswer);
         answerText.setVisibility(View.VISIBLE);
+    }
+
+    public void removeUndo(){
+
+        int[] pegList4 = {11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64, 71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101, 102, 103, 104};
+
+        int[] pegList6 = {11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36, 41, 42, 43, 44, 45, 46, 51, 52, 53, 54, 55, 56, 61, 62, 63, 64, 65, 66, 71, 72, 73, 74, 75, 76, 81, 82, 83, 84, 85, 86, 91, 92, 93, 94, 95, 96, 101, 102, 103, 104, 105, 106};
+
+        int[] pegList = {0};
+
+        int constant=0;
+
+        if(codeLength == 4) {
+            pegList = pegList4.clone();
+            constant = 4;
+        }
+        else if(codeLength == 6) {
+            pegList = pegList6.clone();
+            constant = 6;
+        }
+
+
+        ImageButton testImg1, testImg2, testImg3, testImg4, testImg5, testImg6;
+
+        int placeholder;
+        placeholder = getResources().getIdentifier("pegimage11", "id", getPackageName());
+        testImg5 = ((ImageButton) findViewById(placeholder));
+
+        testImg6 = ((ImageButton) findViewById(placeholder));
+
+        int testID;
+        String image2;
+        boolean release = Peg.isPegReleased();
+        int c = 0;
+        if (release == true) {
+            c = Check.getCountCode().size();
+        }
+        for (int a = c; a < pegList.length; a = a + constant) {
+
+            image2 = "pegimage" + String.valueOf(pegList[a]);
+            testID = getResources().getIdentifier(image2, "id", getPackageName());
+            testImg1 = ((ImageButton) findViewById(testID));
+
+            image2 = "pegimage" + String.valueOf(pegList[a + 1]);
+            testID = getResources().getIdentifier(image2, "id", getPackageName());
+            testImg2 = ((ImageButton) findViewById(testID));
+
+            image2 = "pegimage" + String.valueOf(pegList[a + 2]);
+            testID = getResources().getIdentifier(image2, "id", getPackageName());
+            testImg3 = ((ImageButton) findViewById(testID));
+
+            image2 = "pegimage" + String.valueOf(pegList[a + 3]);
+            testID = getResources().getIdentifier(image2, "id", getPackageName());
+            testImg4 = ((ImageButton) findViewById(testID));
+
+            if (constant == 6) {
+                image2 = "pegimage" + String.valueOf(pegList[a + 4]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg5 = ((ImageButton) findViewById(testID));
+
+                image2 = "pegimage" + String.valueOf(pegList[a + 5]);
+                testID = getResources().getIdentifier(image2, "id", getPackageName());
+                testImg6 = ((ImageButton) findViewById(testID));
+
+            }
+
+            if(constant == 4) {
+                testImg1.setClickable(false);
+                testImg2.setClickable(false);
+                testImg3.setClickable(false);
+                testImg4.setClickable(false);
+                a = 100;
+            }
+            else if(constant == 6){
+                testImg1.setClickable(false);
+                testImg2.setClickable(false);
+                testImg3.setClickable(false);
+                testImg4.setClickable(false);
+                testImg5.setClickable(false);
+                testImg6.setClickable(false);
+                a = 100;
+            }
+        }
+
     }
 
 }

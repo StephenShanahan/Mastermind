@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@drawable/wood_bgtest">
 
 
     <TextView
@@ -15,7 +15,7 @@
         android:textSize="19sp"
         android:layout_marginLeft="27dp"
         android:layout_marginStart="27dp"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:autoLink="web"/>
 
 </LinearLayout>

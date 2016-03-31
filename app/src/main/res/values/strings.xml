@@ -8,7 +8,7 @@
     <string name="Option_buttontext">Options</string>
     <string name="How_buttontext">How to Play</string>
     <string name="title_activity_game">Game</string>
-    <string name="dialog_text_win">Congratulations! You cracked the code! Would you like to play another game?</string>
+    <string name="dialog_text_win">Congratulations! You cracked the code! Would you like to play again?</string>
     <string name="dialog_text_lose">Sorry! You failed to crack the code! Would you like to play again?</string>
     <string name="Duplicates_title">Allow Duplicates:</string>
     <string name="NumberPeg_title">Number of Pegs:</string>
